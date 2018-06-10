@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+
+		5C5B2A4D20CC4FE600941D08 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5B2A4C20CC4FE600941D08 /* QuestionViewController.swift */; };
+
 		517358D37FD6C76E07B56CC7 /* Pods_EduTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74A03771C0DD0F0B77EFF930 /* Pods_EduTestTests.framework */; };
 		5BCB23090CEEC980E619F5F4 /* Pods_EduTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B109A4F562B01E9B6B883C7 /* Pods_EduTest.framework */; };
 		C0F08403C1B5EA2CDA9B278D /* Pods_EduTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D69A6492AC2A04D12C09E69 /* Pods_EduTestUITests.framework */; };
+
 		DC34573320C9B072007DB7A2 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC34573120C9B070007DB7A2 /* SWRevealViewController.m */; };
 		DC34573A20CA0973007DB7A2 /* LectureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC34573920CA0973007DB7A2 /* LectureCell.swift */; };
 		DC34573E20CAFD98007DB7A2 /* ContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC34573D20CAFD98007DB7A2 /* ContentVC.swift */; };
@@ -44,12 +48,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+
+		5C5B2A4C20CC4FE600941D08 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+
 		0079E2D8ECD176700E345946 /* Pods-EduTestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduTestUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EduTestUITests/Pods-EduTestUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		308007C7177A058DC3712176 /* Pods-EduTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EduTest/Pods-EduTest.debug.xcconfig"; sourceTree = "<group>"; };
 		3B109A4F562B01E9B6B883C7 /* Pods_EduTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EduTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D69A6492AC2A04D12C09E69 /* Pods_EduTestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EduTestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74A03771C0DD0F0B77EFF930 /* Pods_EduTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EduTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA7D05E31346162F714332FD /* Pods-EduTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduTestUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EduTestUITests/Pods-EduTestUITests.release.xcconfig"; sourceTree = "<group>"; };
+
 		DC34573020C9B06E007DB7A2 /* EduTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EduTest-Bridging-Header.h"; sourceTree = "<group>"; };
 		DC34573120C9B070007DB7A2 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		DC34573220C9B071007DB7A2 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -147,7 +155,11 @@
 				DCCF492620C863D4003FADC4 /* MenuVC.swift */,
 				DCCF492A20C873DC003FADC4 /* Assets 14-55-59-167.xcassets */,
 				DCD803D120C7152500359C61 /* Main.storyboard */,
+
+				5C5B2A4C20CC4FE600941D08 /* QuestionViewController.swift */,
+
 				DCBC6EDF20CC60A70077BF1E /* SlideTVC.swift */,
+
 				DCCF492820C863E6003FADC4 /* MenuCell.swift */,
 				DC34573920CA0973007DB7A2 /* LectureCell.swift */,
 				DCD803D620C7152500359C61 /* LaunchScreen.storyboard */,
@@ -411,6 +423,7 @@
 				DC34573320C9B072007DB7A2 /* SWRevealViewController.m in Sources */,
 				DC34573E20CAFD98007DB7A2 /* ContentVC.swift in Sources */,
 				DCD803CE20C7152500359C61 /* AppDelegate.swift in Sources */,
+				5C5B2A4D20CC4FE600941D08 /* QuestionViewController.swift in Sources */,
 				DCCF492720C863D4003FADC4 /* MenuVC.swift in Sources */,
 				DCBC6EE020CC60A70077BF1E /* SlideTVC.swift in Sources */,
 			);
@@ -583,6 +596,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9NB6C6JTK7;
 				INFOPLIST_FILE = EduTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.candycloud.EduTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -602,6 +616,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9NB6C6JTK7;
 				INFOPLIST_FILE = EduTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.candycloud.EduTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
