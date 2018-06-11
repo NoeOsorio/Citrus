@@ -8,20 +8,30 @@
 
 import UIKit
 import MBCircularProgressBar
+import Darwin
 
 class ProgressVC: UIViewController {
-
+    @IBOutlet var titleView: UIView!
+    
     @IBOutlet var menuB: UIBarButtonItem!
     @IBAction func btn(_ sender: Any) {
-        animateProgress(toValue: 40, duration: 5.0)
+        
     }
     @IBOutlet weak var progress: MBCircularProgressBarView!
     override func viewDidLoad() {
         super.viewDidLoad()
         sideMenu()
-        self.progress.value = 100
-       
+        self.progress.value = 0
+        titleView.layer.cornerRadius = 10
+        
+        //animateProgress(toValue: 40, duration: 5.0)
+        
     }
+    override func viewWillAppear(_ animated: Bool) {
+        
+        animateProgress(toValue: 60, duration: 5.0)
+    }
+    
     
     func animateProgress (toValue:CGFloat, duration:TimeInterval){
         UIView.animate(withDuration: duration){
