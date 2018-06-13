@@ -1,0 +1,6 @@
+framework module Pods_Citrus {
+  umbrella header "Pods-Citrus-umbrella.h"
+
+  export *
+  module * { export * }
+}
