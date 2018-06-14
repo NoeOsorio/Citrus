@@ -1,4 +1,4 @@
-# Educacion en Mexico
+# Citrus
 
 Una app diseñada para satisfacer las necesidades educativas de los alumnos de educacion Basica.
 
