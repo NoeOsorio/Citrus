@@ -7,7 +7,12 @@ target 'Citrus' do
 
   # Pods for Citrus
   pod "MBCircularProgressBar"
-
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore', '5.1.0'
+  pod 'FirebaseUI'
+  pod 'FBSDKLoginKit'
+  
   target ‘CitrusTests' do
     inherit! :search_paths
     # Pods for testing
