@@ -10,7 +10,7 @@ target 'Citrus' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore', '5.1.0'
-  pod 'FirebaseUI'
+  pod 'GoogleSignIn'
   pod 'FBSDKLoginKit'
   
   target ‘CitrusTests' do
