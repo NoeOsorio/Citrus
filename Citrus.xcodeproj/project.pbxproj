@@ -17,6 +17,7 @@
 		DC34573A20CA0973007DB7A2 /* LectureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC34573920CA0973007DB7A2 /* LectureCell.swift */; };
 		DC34573E20CAFD98007DB7A2 /* ContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC34573D20CAFD98007DB7A2 /* ContentVC.swift */; };
 		DC6BEE0220CB5A9E00C9B0B4 /* ProgressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6BEE0120CB5A9E00C9B0B4 /* ProgressVC.swift */; };
+		DCA53BBF20D99FB300E25A2D /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53BBE20D99FB300E25A2D /* Subject.swift */; };
 		DCBC6EE020CC60A70077BF1E /* SlideTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBC6EDF20CC60A70077BF1E /* SlideTVC.swift */; };
 		DCCEEB6B20D8320F00E237F6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCEEB6A20D8320F00E237F6 /* LoginViewController.swift */; };
 		DCCEEB6D20D8323C00E237F6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCEEB6C20D8323B00E237F6 /* SignUpViewController.swift */; };
@@ -72,6 +73,7 @@
 		DC34573920CA0973007DB7A2 /* LectureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureCell.swift; sourceTree = "<group>"; };
 		DC34573D20CAFD98007DB7A2 /* ContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentVC.swift; path = ../ContentVC.swift; sourceTree = "<group>"; };
 		DC6BEE0120CB5A9E00C9B0B4 /* ProgressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressVC.swift; sourceTree = "<group>"; };
+		DCA53BBE20D99FB300E25A2D /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
 		DCBC6EDF20CC60A70077BF1E /* SlideTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideTVC.swift; sourceTree = "<group>"; };
 		DCCEEB6A20D8320F00E237F6 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DCCEEB6C20D8323B00E237F6 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				DCCF492620C863D4003FADC4 /* MenuVC.swift */,
 				DCCF492A20C873DC003FADC4 /* Assets 14-55-59-167.xcassets */,
 				DCD803D120C7152500359C61 /* Main.storyboard */,
+				DCA53BBE20D99FB300E25A2D /* Subject.swift */,
 				DCCEEB6A20D8320F00E237F6 /* LoginViewController.swift */,
 				DCCEEB6C20D8323B00E237F6 /* SignUpViewController.swift */,
 				5C5B2A4C20CC4FE600941D08 /* QuestionViewController.swift */,
@@ -440,6 +443,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCD803D020C7152500359C61 /* ViewController.swift in Sources */,
+				DCA53BBF20D99FB300E25A2D /* Subject.swift in Sources */,
 				DC6BEE0220CB5A9E00C9B0B4 /* ProgressVC.swift in Sources */,
 				DC34573A20CA0973007DB7A2 /* LectureCell.swift in Sources */,
 				DCCF492920C863E6003FADC4 /* MenuCell.swift in Sources */,
