@@ -43,7 +43,7 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
         cell.title.text = iconos[indexPath.row]["materia"]
         cell.title.tintColor = UIColor.white
-        cell.backgroundColor = colores[indexPath.row % colores.count]
+        //cell.backgroundColor = colores[indexPath.row % colores.count]
         return cell
     }
     
