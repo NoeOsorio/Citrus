@@ -24,10 +24,12 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                    UIColor(red:0.81, green:0.99, blue:0.53, alpha:1.0),
                    UIColor(red:0.56, green:0.68, blue:1.00, alpha:1.0)]
     */
-    var colores = [UIColor(red:1.00, green:1.00, blue:0.62, alpha:1.0),
+    /*var colores = [UIColor(red:1.00, green:1.00, blue:0.62, alpha:1.0),
                    UIColor(red:0.75, green:0.92, blue:0.62, alpha:1.0),
                    UIColor(red:0.47, green:0.74, blue:0.56, alpha:1.0)]
+    */
     
+    var colores = [UIColor(red:0.01, green:0.62, blue:0.65, alpha:1.0)]
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return iconos.count
     }
@@ -37,8 +39,10 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         if let img = iconos[indexPath.row]["icono"]{
             cell.icon.image = UIImage(named: img)
+            cell.icon.tintColor = UIColor.white
         }
         cell.title.text = iconos[indexPath.row]["materia"]
+        cell.title.tintColor = UIColor.white
         cell.backgroundColor = colores[indexPath.row % colores.count]
         return cell
     }
@@ -60,8 +64,6 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             menuB.action = #selector(SWRevealViewController.revealToggle(_:))
             revealViewController().rearViewRevealWidth = 275
             revealViewController().rightViewRevealWidth = 160
-            
-        
             view.addGestureRecognizer(
                 self.revealViewController().panGestureRecognizer())
         }
@@ -71,7 +73,6 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         table.rowHeight = UITableViewAutomaticDimension
-        
         sideMenu()
     }
 

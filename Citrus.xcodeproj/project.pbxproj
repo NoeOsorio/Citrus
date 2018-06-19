@@ -18,6 +18,9 @@
 		DC34573E20CAFD98007DB7A2 /* ContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC34573D20CAFD98007DB7A2 /* ContentVC.swift */; };
 		DC6BEE0220CB5A9E00C9B0B4 /* ProgressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6BEE0120CB5A9E00C9B0B4 /* ProgressVC.swift */; };
 		DCBC6EE020CC60A70077BF1E /* SlideTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBC6EDF20CC60A70077BF1E /* SlideTVC.swift */; };
+		DCCEEB6B20D8320F00E237F6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCEEB6A20D8320F00E237F6 /* LoginViewController.swift */; };
+		DCCEEB6D20D8323C00E237F6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCEEB6C20D8323B00E237F6 /* SignUpViewController.swift */; };
+		DCCEEB6F20D83E3900E237F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DCCEEB6E20D83E3800E237F6 /* GoogleService-Info.plist */; };
 		DCCF492720C863D4003FADC4 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCF492620C863D4003FADC4 /* MenuVC.swift */; };
 		DCCF492920C863E6003FADC4 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCF492820C863E6003FADC4 /* MenuCell.swift */; };
 		DCCF492B20C873DC003FADC4 /* Assets 14-55-59-167.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCCF492A20C873DC003FADC4 /* Assets 14-55-59-167.xcassets */; };
@@ -70,6 +73,9 @@
 		DC34573D20CAFD98007DB7A2 /* ContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentVC.swift; path = ../ContentVC.swift; sourceTree = "<group>"; };
 		DC6BEE0120CB5A9E00C9B0B4 /* ProgressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressVC.swift; sourceTree = "<group>"; };
 		DCBC6EDF20CC60A70077BF1E /* SlideTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideTVC.swift; sourceTree = "<group>"; };
+		DCCEEB6A20D8320F00E237F6 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		DCCEEB6C20D8323B00E237F6 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		DCCEEB6E20D83E3800E237F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DCCF492620C863D4003FADC4 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		DCCF492820C863E6003FADC4 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		DCCF492A20C873DC003FADC4 /* Assets 14-55-59-167.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Assets 14-55-59-167.xcassets"; sourceTree = "<group>"; };
@@ -158,6 +164,7 @@
 		DCD803CC20C7152500359C61 /* Citrus */ = {
 			isa = PBXGroup;
 			children = (
+				DCCEEB6E20D83E3800E237F6 /* GoogleService-Info.plist */,
 				DC6BEE0120CB5A9E00C9B0B4 /* ProgressVC.swift */,
 				DC34573D20CAFD98007DB7A2 /* ContentVC.swift */,
 				DCD803CD20C7152500359C61 /* AppDelegate.swift */,
@@ -165,6 +172,8 @@
 				DCCF492620C863D4003FADC4 /* MenuVC.swift */,
 				DCCF492A20C873DC003FADC4 /* Assets 14-55-59-167.xcassets */,
 				DCD803D120C7152500359C61 /* Main.storyboard */,
+				DCCEEB6A20D8320F00E237F6 /* LoginViewController.swift */,
+				DCCEEB6C20D8323B00E237F6 /* SignUpViewController.swift */,
 				5C5B2A4C20CC4FE600941D08 /* QuestionViewController.swift */,
 				DCBC6EDF20CC60A70077BF1E /* SlideTVC.swift */,
 				DCCF492820C863E6003FADC4 /* MenuCell.swift */,
@@ -328,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCD803D820C7152500359C61 /* LaunchScreen.storyboard in Resources */,
+				DCCEEB6F20D83E3900E237F6 /* GoogleService-Info.plist in Resources */,
 				DCCF492B20C873DC003FADC4 /* Assets 14-55-59-167.xcassets in Resources */,
 				DCD803D320C7152500359C61 /* Main.storyboard in Resources */,
 			);
@@ -435,10 +445,12 @@
 				DCCF492920C863E6003FADC4 /* MenuCell.swift in Sources */,
 				DC34573320C9B072007DB7A2 /* SWRevealViewController.m in Sources */,
 				DC34573E20CAFD98007DB7A2 /* ContentVC.swift in Sources */,
+				DCCEEB6D20D8323C00E237F6 /* SignUpViewController.swift in Sources */,
 				DCD803CE20C7152500359C61 /* AppDelegate.swift in Sources */,
 				5C5B2A4D20CC4FE600941D08 /* QuestionViewController.swift in Sources */,
 				DCCF492720C863D4003FADC4 /* MenuVC.swift in Sources */,
 				DCBC6EE020CC60A70077BF1E /* SlideTVC.swift in Sources */,
+				DCCEEB6B20D8320F00E237F6 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
