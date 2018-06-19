@@ -15,17 +15,27 @@ import FBSDKCoreKit
 
 class LoginViewController: UIViewController, GIDSignInUIDelegate, FBSDKLoginButtonDelegate {
    
+    @IBOutlet var ingresarButton: UIButton!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var googleButton: GIDSignInButton!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Button Style
+        emailField.layer.cornerRadius = 15
+        passwordField.layer.cornerRadius = 15
+        ingresarButton.layer.cornerRadius = 20
+        
+        
         // Create facebook button
         let fbLoginButton = FBSDKLoginButton()
         fbLoginButton.delegate = self
-        fbLoginButton.frame = CGRect(x: 98, y: 422 + 66, width: 179, height: 42)
+        fbLoginButton.frame = CGRect(x: 98, y: 422 + 66, width: 190, height: 42)
         view.addSubview(fbLoginButton)
+        
         
         //Inicializar boton de google
         GIDSignIn.sharedInstance().uiDelegate = self

@@ -172,13 +172,8 @@
                         <inset key="imageInsets" minX="0.0" minY="3" maxX="0.0" maxY="0.0"/>
                         <color key="badgeColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBarItem>
-                    <navigationItem key="navigationItem" id="AIC-fz-RC7">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="menu" id="WmX-d8-LmT">
-                            <color key="tintColor" red="0.30980392156862746" green="0.38823529411764707" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="AIC-fz-RC7"/>
                     <connections>
-                        <outlet property="menuB" destination="WmX-d8-LmT" id="SBN-ED-hUH"/>
                         <outlet property="progress" destination="0LU-6W-PqB" id="Ba0-DD-vMB"/>
                         <outlet property="titleView" destination="BDp-Ys-dXi" id="wS0-SS-7aT"/>
                     </connections>
@@ -251,13 +246,8 @@
                         <viewLayoutGuide key="safeArea" id="Zac-44-4Ua"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Menu" image="tabmenu" id="1rG-St-y9y"/>
-                    <navigationItem key="navigationItem" id="8n1-dW-2K9">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="menu" width="1" id="Fuq-iD-kxE">
-                            <color key="tintColor" red="0.30980392156862746" green="0.38823529411764707" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="8n1-dW-2K9"/>
                     <connections>
-                        <outlet property="menuB" destination="Fuq-iD-kxE" id="ofr-yl-kkA"/>
                         <outlet property="table" destination="RxZ-iO-oH3" id="CKZ-dr-pv3"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="lectura" id="GvW-4q-x52"/>
                         <segue destination="IHi-1y-sh1" kind="show" identifier="ejercicio" id="NJe-g4-qbA"/>
@@ -393,8 +383,8 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nYI-Yb-ykC">
                                 <rect key="frame" x="98" y="316" width="179" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.42745098040000001" green="0.61176470589999998" blue="0.63921568630000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="backgroundColor" red="0.94807368516921997" green="0.52177280187606812" blue="0.28904116153717041" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
                                 <state key="normal" title="Ingresar">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -403,8 +393,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wdF-qh-pe2">
-                                <rect key="frame" x="73" y="617" width="229" height="30"/>
+                                <rect key="frame" x="73" y="602" width="229" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                 <state key="normal" title="O crea una nueva cuenta">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -413,17 +404,35 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DS0-KP-POI" customClass="GIDSignInButton">
-                                <rect key="frame" x="98" y="422" width="179" height="42"/>
+                                <rect key="frame" x="77" y="422" width="220" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="google" translatesAutoresizingMaskIntoConstraints="NO" id="UaO-fU-fTl">
+                                        <rect key="frame" x="8" y="8" width="32" height="26"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ingresa con Google" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ei-pT-21b">
+                                        <rect key="frame" x="48" y="11" width="164" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="orange" translatesAutoresizingMaskIntoConstraints="NO" id="wkf-09-qvp">
+                                <rect key="frame" x="67" y="42" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.95294117649999999" green="0.44705882349999998" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.092689362582781459" green="0.29506153282781461" blue="0.44541073121854313" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="roZ-tX-pIX"/>
                     </view>
                     <connections>
                         <outlet property="emailField" destination="v0q-fG-IQ0" id="TWL-Qk-30w"/>
                         <outlet property="googleButton" destination="DS0-KP-POI" id="TRx-i8-iku"/>
+                        <outlet property="ingresarButton" destination="nYI-Yb-ykC" id="xfU-sn-7MY"/>
                         <outlet property="passwordField" destination="PNG-VO-7Xc" id="MkP-NN-3gz"/>
                         <segue destination="QdA-5A-QTL" kind="show" identifier="register" id="5xE-Nh-PoO"/>
                         <segue destination="7qq-ML-lMb" kind="show" identifier="logged" id="WaE-Jm-a8p"/>
@@ -431,7 +440,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DyO-OC-V7w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5207" y="-1156"/>
+            <point key="canvasLocation" x="-5207.1999999999998" y="-1156.3718140929536"/>
         </scene>
         <!--SignUpView-->
         <scene sceneID="qgB-I1-4oF">
@@ -455,13 +464,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="nombre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="37I-9I-ORL">
-                                <rect key="frame" x="57" y="180" width="260" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <textInputTraits key="textInputTraits" textContentType="name"/>
-                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="confirmar contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uMh-zb-ghX">
                                 <rect key="frame" x="57" y="326" width="260" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -472,8 +474,8 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YvJ-w8-xx1">
                                 <rect key="frame" x="98" y="411" width="179" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.42745098039215684" green="0.61176470588235299" blue="0.63921568627450975" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="backgroundColor" red="0.94807368516921997" green="0.52177280187606812" blue="0.28904116153717041" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
                                 <state key="normal" title="Registrar">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -481,8 +483,22 @@
                                     <action selector="didTouchRegisterButton:" destination="QdA-5A-QTL" eventType="touchUpInside" id="QLT-Jv-Rmu"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Registrate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="goE-m5-UaN">
+                                <rect key="frame" x="92" y="70" width="191" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="32"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="nombre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="37I-9I-ORL">
+                                <rect key="frame" x="57" y="182" width="260" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" textContentType="name"/>
+                            </textField>
                         </subviews>
-                        <color key="backgroundColor" red="0.95294117647058818" green="0.44705882352941173" blue="0.1764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.11131218820810318" green="0.37374991178512573" blue="0.52238112688064575" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="wXv-fE-iKd"/>
                     </view>
                     <connections>
@@ -495,7 +511,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qB3-mF-KZi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5207" y="-361"/>
+            <point key="canvasLocation" x="-5207.5" y="-361.5"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="Jhd-d1-wfL">
@@ -654,6 +670,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="7qq-ML-lMb" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="in0-0G-bTN">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -671,7 +688,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="menu" width="32" height="32"/>
+        <image name="google" width="64" height="64"/>
+        <image name="orange" width="256" height="256"/>
         <image name="tabmenu" width="32" height="32"/>
         <image name="user" width="32" height="32"/>
     </resources>

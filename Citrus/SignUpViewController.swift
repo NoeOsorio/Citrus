@@ -19,6 +19,12 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //View Stlyle
+        nameField.layer.cornerRadius = 15
+        emailField.layer.cornerRadius = 15
+        passwordField.layer.cornerRadius = 15
+        confirmPassField.layer.cornerRadius = 15
+        registerButton.layer.cornerRadius = 20
 
         // Do any additional setup after loading the view.
     }
