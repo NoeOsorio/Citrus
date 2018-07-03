@@ -18,6 +18,9 @@
 		DC34573E20CAFD98007DB7A2 /* ContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC34573D20CAFD98007DB7A2 /* ContentVC.swift */; };
 		DC6BEE0220CB5A9E00C9B0B4 /* ProgressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6BEE0120CB5A9E00C9B0B4 /* ProgressVC.swift */; };
 		DCA53BBF20D99FB300E25A2D /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53BBE20D99FB300E25A2D /* Subject.swift */; };
+		DCA53BC120D9DD4D00E25A2D /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53BC020D9DD4D00E25A2D /* HomeVC.swift */; };
+		DCA53BC320D9DEB500E25A2D /* CategoriaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53BC220D9DEB500E25A2D /* CategoriaCell.swift */; };
+		DCA53BC520D9DED100E25A2D /* HotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53BC420D9DED100E25A2D /* HotCell.swift */; };
 		DCBC6EE020CC60A70077BF1E /* SlideTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBC6EDF20CC60A70077BF1E /* SlideTVC.swift */; };
 		DCCEEB6B20D8320F00E237F6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCEEB6A20D8320F00E237F6 /* LoginViewController.swift */; };
 		DCCEEB6D20D8323C00E237F6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCEEB6C20D8323B00E237F6 /* SignUpViewController.swift */; };
@@ -31,6 +34,10 @@
 		DCD803D820C7152500359C61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCD803D620C7152500359C61 /* LaunchScreen.storyboard */; };
 		DCD803E320C7152600359C61 /* EduTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD803E220C7152600359C61 /* EduTestTests.swift */; };
 		DCD803EE20C7152600359C61 /* EduTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD803ED20C7152600359C61 /* EduTestUITests.swift */; };
+		DCE8C07E20E6AEF900C95D4F /* ProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE8C07D20E6AEF900C95D4F /* ProjectCell.swift */; };
+		DCE8C08020E6AF2000C95D4F /* ProjectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE8C07F20E6AF2000C95D4F /* ProjectVC.swift */; };
+		DCE8C08220E6DCDA00C95D4F /* ProjectContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCE8C08120E6DCDA00C95D4F /* ProjectContent.xib */; };
+		DCE8C08420E6DCFE00C95D4F /* ProjectV.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE8C08320E6DCFE00C95D4F /* ProjectV.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +81,9 @@
 		DC34573D20CAFD98007DB7A2 /* ContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentVC.swift; path = ../ContentVC.swift; sourceTree = "<group>"; };
 		DC6BEE0120CB5A9E00C9B0B4 /* ProgressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressVC.swift; sourceTree = "<group>"; };
 		DCA53BBE20D99FB300E25A2D /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
+		DCA53BC020D9DD4D00E25A2D /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		DCA53BC220D9DEB500E25A2D /* CategoriaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriaCell.swift; sourceTree = "<group>"; };
+		DCA53BC420D9DED100E25A2D /* HotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotCell.swift; sourceTree = "<group>"; };
 		DCBC6EDF20CC60A70077BF1E /* SlideTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideTVC.swift; sourceTree = "<group>"; };
 		DCCEEB6A20D8320F00E237F6 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DCCEEB6C20D8323B00E237F6 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +103,10 @@
 		DCD803E920C7152600359C61 /* CitrusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CitrusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCD803ED20C7152600359C61 /* EduTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EduTestUITests.swift; sourceTree = "<group>"; };
 		DCD803EF20C7152600359C61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCE8C07D20E6AEF900C95D4F /* ProjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCell.swift; sourceTree = "<group>"; };
+		DCE8C07F20E6AF2000C95D4F /* ProjectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectVC.swift; sourceTree = "<group>"; };
+		DCE8C08120E6DCDA00C95D4F /* ProjectContent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectContent.xib; sourceTree = "<group>"; };
+		DCE8C08320E6DCFE00C95D4F /* ProjectV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectV.swift; sourceTree = "<group>"; };
 		E37535940A6163FA1D4EBFAF /* Pods-EduTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduTestTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EduTestTests/Pods-EduTestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E8E4B52ECC3184AE468389D2 /* Pods-EduTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduTestTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EduTestTests/Pods-EduTestTests.release.xcconfig"; sourceTree = "<group>"; };
 		FD737933C01B782A5539B315 /* Pods-EduTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-EduTest/Pods-EduTest.release.xcconfig"; sourceTree = "<group>"; };
@@ -174,6 +188,13 @@
 				DCCF492620C863D4003FADC4 /* MenuVC.swift */,
 				DCCF492A20C873DC003FADC4 /* Assets 14-55-59-167.xcassets */,
 				DCD803D120C7152500359C61 /* Main.storyboard */,
+				DCE8C08120E6DCDA00C95D4F /* ProjectContent.xib */,
+				DCE8C08320E6DCFE00C95D4F /* ProjectV.swift */,
+				DCE8C07D20E6AEF900C95D4F /* ProjectCell.swift */,
+				DCE8C07F20E6AF2000C95D4F /* ProjectVC.swift */,
+				DCA53BC020D9DD4D00E25A2D /* HomeVC.swift */,
+				DCA53BC220D9DEB500E25A2D /* CategoriaCell.swift */,
+				DCA53BC420D9DED100E25A2D /* HotCell.swift */,
 				DCA53BBE20D99FB300E25A2D /* Subject.swift */,
 				DCCEEB6A20D8320F00E237F6 /* LoginViewController.swift */,
 				DCCEEB6C20D8323B00E237F6 /* SignUpViewController.swift */,
@@ -342,6 +363,7 @@
 				DCD803D820C7152500359C61 /* LaunchScreen.storyboard in Resources */,
 				DCCEEB6F20D83E3900E237F6 /* GoogleService-Info.plist in Resources */,
 				DCCF492B20C873DC003FADC4 /* Assets 14-55-59-167.xcassets in Resources */,
+				DCE8C08220E6DCDA00C95D4F /* ProjectContent.xib in Resources */,
 				DCD803D320C7152500359C61 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -443,7 +465,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCD803D020C7152500359C61 /* ViewController.swift in Sources */,
+				DCA53BC120D9DD4D00E25A2D /* HomeVC.swift in Sources */,
 				DCA53BBF20D99FB300E25A2D /* Subject.swift in Sources */,
+				DCA53BC520D9DED100E25A2D /* HotCell.swift in Sources */,
 				DC6BEE0220CB5A9E00C9B0B4 /* ProgressVC.swift in Sources */,
 				DC34573A20CA0973007DB7A2 /* LectureCell.swift in Sources */,
 				DCCF492920C863E6003FADC4 /* MenuCell.swift in Sources */,
@@ -451,9 +475,13 @@
 				DC34573E20CAFD98007DB7A2 /* ContentVC.swift in Sources */,
 				DCCEEB6D20D8323C00E237F6 /* SignUpViewController.swift in Sources */,
 				DCD803CE20C7152500359C61 /* AppDelegate.swift in Sources */,
+				DCE8C07E20E6AEF900C95D4F /* ProjectCell.swift in Sources */,
 				5C5B2A4D20CC4FE600941D08 /* QuestionViewController.swift in Sources */,
 				DCCF492720C863D4003FADC4 /* MenuVC.swift in Sources */,
+				DCA53BC320D9DEB500E25A2D /* CategoriaCell.swift in Sources */,
 				DCBC6EE020CC60A70077BF1E /* SlideTVC.swift in Sources */,
+				DCE8C08020E6AF2000C95D4F /* ProjectVC.swift in Sources */,
+				DCE8C08420E6DCFE00C95D4F /* ProjectV.swift in Sources */,
 				DCCEEB6B20D8320F00E237F6 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
