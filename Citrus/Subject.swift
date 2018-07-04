@@ -10,23 +10,26 @@ import Foundation
 
 struct Subject{
     var title:String?
-    var reading:String?
-    var image:UIImage?
+    var content:String?
+    var index:Int?
     var tests: [Test] = []
     
-    init(title:String, reading:String, img:String) {
+    init(title:String, content:String, index:Int) {
         self.title = title
-        self.reading = reading
-        self.image = UIImage(named:img)
+        self.content = content
+        self.index = index
     }
-    mutating func set(img:String) {
-        self.image = UIImage(named:img)
-        
+    init(){
+        self.title = "Bienvenido"
+        self.content = "Gracias por confiar en nosotros"
+        self.index = 0
     }
-    mutating func set(img:UIImage) {
-        self.image = img
-        
+    mutating func setData(title:String, content:String, index:Int){
+        self.title = title
+        self.content = content
+        self.index = index
     }
+    
     
 }
 

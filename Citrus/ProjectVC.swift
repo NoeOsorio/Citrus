@@ -17,9 +17,12 @@ class ProjectVC: UIViewController, UIScrollViewDelegate{
     
     private var lastContentOffset: CGFloat = 0
     
+    var pageTotal:Int?
+    var subject:Subject = Subject()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //pageControl.numberOfPages = 2
         scrollV.delegate = self
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(swipe:)))
         swipeLeft.direction = UISwipeGestureRecognizerDirection.left
@@ -28,6 +31,8 @@ class ProjectVC: UIViewController, UIScrollViewDelegate{
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(swipe:)))
         swipeRight.direction = UISwipeGestureRecognizerDirection.right
         self.view.addGestureRecognizer(swipeRight)
+        getClass(index: 0)
+        getNumberPages()
         
     }
     
@@ -45,15 +50,24 @@ class ProjectVC: UIViewController, UIScrollViewDelegate{
     }
     
     @objc func swipeAction(swipe:UISwipeGestureRecognizer){
+        var currentp = Int(pageControl.currentPage)
         switch swipe.direction.rawValue {
         case 1:
             //Right
-            textContainer.text = "Left"
-            pageControl.currentPage = Int(pageControl.currentPage) + 1
+            currentp = currentp - 1
+            //if (currentp < 0){
+              //  currentp = 0
+            //
+            getClass(index: currentp)
+            pageControl.currentPage = currentp
         case 2:
             //Left
-            textContainer.text = "Right"
-            pageControl.currentPage = Int(pageControl.currentPage) - 1
+            currentp = currentp + 1
+            /*if (currentp > pageTotal){
+                currentp = pageTotal
+            }*/
+            getClass(index: currentp)
+            pageControl.currentPage = currentp
         default:
             break
         }
@@ -66,23 +80,61 @@ class ProjectVC: UIViewController, UIScrollViewDelegate{
         pageControl.currentPage = Int(pageControl.currentPage) + direction
         
     }
-    func getDB(){
+    func getClass(index: Int){
+        getNumberPages()
+        //Base de datos
         let db = Firestore.firestore()
-        let docRef = db.collection("Materias/Historia/Proyectos/Cuento/Cuentos")
-        docRef.whereField("Autor", isEqualTo: "Noe Osorio").getDocuments { (snapshot, error) in
+        
+        //Referencia de la coleccion
+        let docRef = db.collection("Materias/Historia/Proyectos/Cuento/Clase")
+        
+        //Obtener los datos del contenido por clase
+        docRef.whereField("Index", isEqualTo: index).getDocuments{ (snapshot, error) in
             if error != nil{
-                
+                print("Error en la base de datos")
             }
             else{
                 for document in (snapshot?.documents)!{
-                    if let intro = document.data()["Introduccion"]{
-                        print(intro)
+                    if let titulo = document.data()["Titulo"] as? String{
+                        if let content = document.data()["Contenido"] as? String{
+                            self.subject.setData(title: titulo, content: content, index: index)
+                            print("Data succesfully added with index \(index)")
+                            self.showData()
+                        }
                     }
                 }
             }
         }
         
+        
     }
+    func showData(){
+        self.titulo.text = subject.title
+        self.textContainer.text = subject.content
+        self.pageControl.currentPage = (subject.index)!
+        
+    }
+    
+    func getNumberPages(){
+        //Base de datos
+        let db = Firestore.firestore()
+        
+        //Referencia de la coleccion
+        let docRef = db.collection("Materias/Historia/Proyectos/Cuento/Clase")
+        
+        //Numero de paginas
+        docRef.getDocuments { (countsnap, error) in
+            if error != nil{
+                print("Documento no encontrado")
+            }
+            else{
+                let count = countsnap?.documents.count
+                self.pageTotal = count!
+                self.pageControl.numberOfPages = self.pageTotal!
+            }
+        }
+    }
+    
 
 
 }
