@@ -20,10 +20,15 @@ class ProjectVC: UIViewController, UIScrollViewDelegate{
     var pageTotal:Int?
     var subject:Subject = Subject()
     
+    //Variables que se modifican dependiendo lo que eliga el usuario
+    var materia:String?
+    var proyecto:String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //pageControl.numberOfPages = 2
+       
         scrollV.delegate = self
+        //==Gestures==
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(swipe:)))
         swipeLeft.direction = UISwipeGestureRecognizerDirection.left
         self.view.addGestureRecognizer(swipeLeft)
@@ -31,6 +36,11 @@ class ProjectVC: UIViewController, UIScrollViewDelegate{
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(swipe:)))
         swipeRight.direction = UISwipeGestureRecognizerDirection.right
         self.view.addGestureRecognizer(swipeRight)
+        
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(swipe:)))
+        swipeDown.direction = UISwipeGestureRecognizerDirection.down
+        self.view.addGestureRecognizer(swipeDown)
+        //==
         getClass(index: 0)
         getNumberPages()
         
@@ -55,20 +65,15 @@ class ProjectVC: UIViewController, UIScrollViewDelegate{
         case 1:
             //Right
             currentp = currentp - 1
-            //if (currentp < 0){
-              //  currentp = 0
-            //
             getClass(index: currentp)
             pageControl.currentPage = currentp
         case 2:
             //Left
             currentp = currentp + 1
-            /*if (currentp > pageTotal){
-                currentp = pageTotal
-            }*/
             getClass(index: currentp)
             pageControl.currentPage = currentp
         default:
+            self.dismiss(animated: true, completion: nil)
             break
         }
         
@@ -81,12 +86,13 @@ class ProjectVC: UIViewController, UIScrollViewDelegate{
         
     }
     func getClass(index: Int){
+        //var materia = "Historia"
         getNumberPages()
         //Base de datos
         let db = Firestore.firestore()
         
         //Referencia de la coleccion
-        let docRef = db.collection("Materias/Historia/Proyectos/Cuento/Clase")
+        let docRef = db.collection("Materias/"+self.materia!+"/Proyectos/"+self.proyecto!+"/Clase")
         
         //Obtener los datos del contenido por clase
         docRef.whereField("Index", isEqualTo: index).getDocuments{ (snapshot, error) in

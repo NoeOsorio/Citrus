@@ -10,27 +10,39 @@ import UIKit
 
 class ContentVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var lecturas: [Lectura] = []
+    @IBOutlet var tituloMain: UILabel!
+    var noticias: [Noticia] = []
+    var noticia: Noticia?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Gestos
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(swipeleft(swipe:)))
+        swipeRight.direction = UISwipeGestureRecognizerDirection.right
+        self.view.addGestureRecognizer(swipeRight)
+        //====
+        tituloMain.text = "Noticias de la semana"
         
         // Do any additional setup after loading the view.
     }
     
+    @objc func swipeleft(swipe:UISwipeGestureRecognizer){
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "lectura", for: indexPath) as! LectureCell
         
-        cell.subtitulo.text = "Subtema \(indexPath.row)"
-        cell.texto.text = "En esta seccion va a ir el contenido del subtema que estemos trabajando"
+        cell.subtitulo.text = noticia?.title
+        cell.texto.text = noticia?.content
         
         if let img:String = "university.png"{
-            cell.imagen.image = UIImage(named: img)
+            cell.imagen.image = #imageLiteral(resourceName: "orangebg")
         }
         
         cell.setHighlighted(false, animated: true)
