@@ -12,6 +12,7 @@ target 'Citrus' do
   pod 'Firebase/Firestore', '5.1.0'
   pod 'GoogleSignIn'
   pod 'FBSDKLoginKit'
+  pod 'lottie-ios'
   
   target ‘CitrusTests' do
     inherit! :search_paths
