@@ -19,7 +19,7 @@ class TipVC: UIViewController {
     @IBOutlet weak var nextbutton: UIButton!
     
     var subject: Subject = Subject()
-    var counter = 1
+    var counter: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +28,11 @@ class TipVC: UIViewController {
         setColor(index: counter)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        getContent(index: counter)
+        loadAnimation(index: counter)
+        setColor(index: counter)
+    }
     func getContent(index: Int){
         let db = Firestore.firestore() //Base de datos
         let docRef = db.collection("Materias/Historia/Proyectos/Cuento/Tips")//referencia
@@ -68,12 +73,14 @@ class TipVC: UIViewController {
         }
         
         animation.loopAnimation = true
-        animation.contentMode = .scaleAspectFill
+        animation.contentMode = .scaleAspectFit
         view.addSubview(animation)
         animation.play()
     }
     
     func setColor(index: Int) {
+        
+        //Todavia no cargan bien los colores
         switch index {
         case 0: self.view.backgroundColor = UIColor(red: 21, green:139 , blue: 193, alpha: 1)
                 titleField.backgroundColor = UIColor(red: 21, green:139 , blue: 193, alpha: 1)
@@ -93,10 +100,21 @@ class TipVC: UIViewController {
     }
     
     @IBAction func didTouchButton(_ sender: UIButton) {
-        counter = counter + 1
-        
-        //perform segue
+        performSegue(withIdentifier: "goToWriteSection", sender: self)
     }
+    
+    @IBAction func unwindToTip(segue: UIStoryboardSegue) {
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if (segue.identifier == "goToWriteSection") {
+            let CuentoVC = (segue.destination as! CuentoVC)
+            CuentoVC.counter = counter
+        }
+    }
+    
     func showData(){
         self.titleField.text = subject.title
         self.contentField1.text = subject.content

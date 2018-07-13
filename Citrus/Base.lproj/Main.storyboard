@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qV4-vS-4pV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xdv-za-gyf">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -591,6 +591,7 @@
                         <outlet property="scrollV" destination="e0c-Yr-9C8" id="133-ze-gER"/>
                         <outlet property="textContainer" destination="dVS-SE-aIy" id="axh-6V-Tub"/>
                         <outlet property="titulo" destination="i3X-nt-mtk" id="WOu-3P-wvh"/>
+                        <segue destination="qV4-vS-4pV" kind="show" identifier="goToTipSection" id="cws-pS-1tP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IjJ-Vw-zxg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -638,7 +639,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hsc-4w-9Zm" customClass="LOTAnimationView">
-                                <rect key="frame" x="16" y="458" width="343" height="171"/>
+                                <rect key="frame" x="16" y="464" width="343" height="165"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -652,11 +653,47 @@
                         <outlet property="contentField2" destination="FGM-dW-Gej" id="Zju-F2-Zk8"/>
                         <outlet property="nextbutton" destination="cmc-qz-m3N" id="q7R-VR-Mbs"/>
                         <outlet property="titleField" destination="q0u-Dh-WqS" id="eU1-0Q-J4y"/>
+                        <segue destination="2Yj-N6-OIe" kind="show" identifier="goToWriteSection" id="XCf-yJ-sDd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Mi-Dc-Rjz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2720.8000000000002" y="-2179.1604197901052"/>
+        </scene>
+        <!--Cuento-->
+        <scene sceneID="Wzu-wS-pCo">
+            <objects>
+                <viewController title="Cuento" id="2Yj-N6-OIe" customClass="CuentoVC" customModule="Citrus" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pVx-Dj-hbc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Escribe tu idea" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aVX-iz-jRN">
+                                <rect key="frame" x="16" y="115" width="343" height="332"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yw5-DV-Qjm">
+                                <rect key="frame" x="151" y="510" width="72" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Siguiente"/>
+                                <connections>
+                                    <action selector="didTouchNextButton:" destination="2Yj-N6-OIe" eventType="touchUpInside" id="IdV-8s-7SU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hgf-wd-1nN"/>
+                    </view>
+                    <connections>
+                        <segue destination="AjJ-q9-Q71" kind="unwind" identifier="unwindToTip" unwindAction="unwindToTipWithSegue:" id="Pit-ff-46O"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gbm-c9-00V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="AjJ-q9-Q71" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3557.5999999999999" y="-2179.1604197901052"/>
         </scene>
         <!--LoginView-->
         <scene sceneID="k2w-dm-d7f">
