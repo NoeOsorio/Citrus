@@ -19,6 +19,7 @@ class ProjectVC: UIViewController, UIScrollViewDelegate{
     
     var pageTotal:Int?
     var subject:Subject = Subject()
+    var counter = 0
     
     //Variables que se modifican dependiendo lo que eliga el usuario
     var materia:String?
@@ -61,17 +62,26 @@ class ProjectVC: UIViewController, UIScrollViewDelegate{
     
     @objc func swipeAction(swipe:UISwipeGestureRecognizer){
         var currentp = Int(pageControl.currentPage)
+        
         switch swipe.direction.rawValue {
         case 1:
             //Right
             currentp = currentp - 1
             getClass(index: currentp)
             pageControl.currentPage = currentp
+            
+            if (currentp > 3) {
+                performSegue(withIdentifier: "goToTipSection", sender: self)
+            }
         case 2:
             //Left
             currentp = currentp + 1
             getClass(index: currentp)
             pageControl.currentPage = currentp
+            
+            if (currentp > 3) {
+                performSegue(withIdentifier: "goToTipSection", sender: self)
+            }
         default:
             self.dismiss(animated: true, completion: nil)
             break
@@ -141,7 +151,12 @@ class ProjectVC: UIViewController, UIScrollViewDelegate{
         }
     }
     
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "goToTipSection") {
+            let TipVC = (segue.destination as! TipVC)
+            TipVC.counter = counter
+        }
+    }
 
 }
 
