@@ -118,7 +118,6 @@ class ProjectVC: UIViewController, UIScrollViewDelegate{
         self.titulo.text = subject.title
         self.textContainer.text = subject.content
         self.pageControl.currentPage = (subject.index)!
-        
     }
     
     func getNumberPages(){

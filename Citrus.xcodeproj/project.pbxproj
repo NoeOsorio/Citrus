@@ -78,7 +78,7 @@
 		DC34573120C9B070007DB7A2 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		DC34573220C9B071007DB7A2 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		DC34573920CA0973007DB7A2 /* LectureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureCell.swift; sourceTree = "<group>"; };
-		DC34573D20CAFD98007DB7A2 /* ContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentVC.swift; path = ../ContentVC.swift; sourceTree = "<group>"; };
+		DC34573D20CAFD98007DB7A2 /* ContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentVC.swift; path = ViewControllers/ContentVC.swift; sourceTree = "<group>"; };
 		DC6BEE0120CB5A9E00C9B0B4 /* ProgressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressVC.swift; sourceTree = "<group>"; };
 		DCA53BBE20D99FB300E25A2D /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
 		DCA53BC020D9DD4D00E25A2D /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -180,26 +180,26 @@
 		DCD803CC20C7152500359C61 /* Citrus */ = {
 			isa = PBXGroup;
 			children = (
-				DCCEEB6E20D83E3800E237F6 /* GoogleService-Info.plist */,
 				DC6BEE0120CB5A9E00C9B0B4 /* ProgressVC.swift */,
 				DC34573D20CAFD98007DB7A2 /* ContentVC.swift */,
-				DCD803CD20C7152500359C61 /* AppDelegate.swift */,
 				DCD803CF20C7152500359C61 /* ViewController.swift */,
 				DCCF492620C863D4003FADC4 /* MenuVC.swift */,
+				DCE8C07F20E6AF2000C95D4F /* ProjectVC.swift */,
+				DCA53BC020D9DD4D00E25A2D /* HomeVC.swift */,
+				DCCEEB6A20D8320F00E237F6 /* LoginViewController.swift */,
+				DCCEEB6C20D8323B00E237F6 /* SignUpViewController.swift */,
+				5C5B2A4C20CC4FE600941D08 /* QuestionViewController.swift */,
+				DCBC6EDF20CC60A70077BF1E /* SlideTVC.swift */,
+				DCCEEB6E20D83E3800E237F6 /* GoogleService-Info.plist */,
+				DCD803CD20C7152500359C61 /* AppDelegate.swift */,
 				DCCF492A20C873DC003FADC4 /* Assets 14-55-59-167.xcassets */,
 				DCD803D120C7152500359C61 /* Main.storyboard */,
 				DCE8C08120E6DCDA00C95D4F /* ProjectContent.xib */,
 				DCE8C08320E6DCFE00C95D4F /* ProjectV.swift */,
 				DCE8C07D20E6AEF900C95D4F /* ProjectCell.swift */,
-				DCE8C07F20E6AF2000C95D4F /* ProjectVC.swift */,
-				DCA53BC020D9DD4D00E25A2D /* HomeVC.swift */,
 				DCA53BC220D9DEB500E25A2D /* CategoriaCell.swift */,
 				DCA53BC420D9DED100E25A2D /* HotCell.swift */,
 				DCA53BBE20D99FB300E25A2D /* Subject.swift */,
-				DCCEEB6A20D8320F00E237F6 /* LoginViewController.swift */,
-				DCCEEB6C20D8323B00E237F6 /* SignUpViewController.swift */,
-				5C5B2A4C20CC4FE600941D08 /* QuestionViewController.swift */,
-				DCBC6EDF20CC60A70077BF1E /* SlideTVC.swift */,
 				DCCF492820C863E6003FADC4 /* MenuCell.swift */,
 				DC34573920CA0973007DB7A2 /* LectureCell.swift */,
 				DCD803D620C7152500359C61 /* LaunchScreen.storyboard */,

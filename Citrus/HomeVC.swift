@@ -5,7 +5,7 @@
 //  Created by Noe Osorio on 19/06/18.
 //  Copyright © 2018 Noe Osorio. All rights reserved.
 //
-import 
+import FirebaseFirestore
 import UIKit
 
 class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource {
@@ -15,6 +15,8 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICo
     //Variables
     var categorias:[String] = []
     var noticias:[Noticia] = []
+    var proyectos:[[[String:String]]] = []
+    var clasesicon:[[String:String]] = []
     var selectedNoticia:Int?
     var materia:String?
     var proyecto:String?
@@ -79,6 +81,39 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICo
         }
     }
     
+    func getClases(materia:String){
+        
+        //Variables
+        var classicons:[[String:String]] = []
+        clasesicon.removeAll()
+        
+        //DataBase
+        let db = Firestore.firestore()
+        //let settings = db.settings
+        //settings.areTimestampsInSnapshotsEnabled = true
+        //db.settings = settings
+        
+        //Referencia
+        let matRef = db.collection("Materias").document(materia).collection("Proyectos")
+        matRef.getDocuments { (clases, error) in
+            if error != nil{
+                print("Clases no encontradas")
+            }
+            else{
+                for clase in (clases?.documents)!{
+                    if let titulo = clase.data()["Titulo"] as? String{
+                        if let icono = clase.data()["Icono"] as? String{
+                            classicons.append(["clase":titulo,"icono":icono])
+                            self.clasesicon.append(["clase":titulo,"icono":icono])
+                        }
+                        
+                    }
+                }
+                self.proyectos.append(classicons)
+            }
+        }
+    }
+    
     func insertCategoria(){
         
         let newIndexPath = IndexPath(item: self.categorias.count-1, section: 0)
@@ -128,7 +163,11 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICo
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         materia = categorias[indexPath.row]
-        performSegue(withIdentifier: "Clase", sender: self)
+        //getClases(materia: materia!)
+        //performSegue(withIdentifier: "Clase", sender: self)
+        performSegue(withIdentifier: "curso", sender: self)
+       
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -136,8 +175,13 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICo
             destino.materia = materia
             destino.proyecto = "Cuento"
         }
-        if let mostrarNoticia = segue.destination as? ContentVC{
+        /*if let mostrarNoticia = segue.destination as? ContentVC{
             mostrarNoticia.noticia = noticias[selectedNoticia!]
+        }*/
+        if let destiny = segue.destination as? MenuVC{
+            destiny.materia = materia
+            //getClases(materia: materia!)
+            //destiny.classicons = clasesicon
         }
     }
     
