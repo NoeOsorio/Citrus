@@ -13,6 +13,8 @@
 		5C5B2A4D20CC4FE600941D08 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5B2A4C20CC4FE600941D08 /* QuestionViewController.swift */; };
 		AE6C0625BEC539A423D738B2 /* Pods_Citrus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B699E9CD8218594D00D8D523 /* Pods_Citrus.framework */; };
 		C0F08403C1B5EA2CDA9B278D /* Pods_EduTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D69A6492AC2A04D12C09E69 /* Pods_EduTestUITests.framework */; };
+		DC2298D021079EA5004D306B /* TipVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2298CE21079EA2004D306B /* TipVC.swift */; };
+		DC2298D121079EA5004D306B /* CuentoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2298CF21079EA4004D306B /* CuentoVC.swift */; };
 		DC34573320C9B072007DB7A2 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC34573120C9B070007DB7A2 /* SWRevealViewController.m */; };
 		DC34573A20CA0973007DB7A2 /* LectureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC34573920CA0973007DB7A2 /* LectureCell.swift */; };
 		DC34573E20CAFD98007DB7A2 /* ContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC34573D20CAFD98007DB7A2 /* ContentVC.swift */; };
@@ -74,6 +76,8 @@
 		B699E9CD8218594D00D8D523 /* Pods_Citrus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Citrus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D91D6B75330847951174D220 /* Pods-CitrusUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CitrusUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CitrusUITests/Pods-CitrusUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DA7D05E31346162F714332FD /* Pods-EduTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduTestUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EduTestUITests/Pods-EduTestUITests.release.xcconfig"; sourceTree = "<group>"; };
+		DC2298CE21079EA2004D306B /* TipVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipVC.swift; sourceTree = "<group>"; };
+		DC2298CF21079EA4004D306B /* CuentoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CuentoVC.swift; sourceTree = "<group>"; };
 		DC34573020C9B06E007DB7A2 /* Citrus-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Citrus-Bridging-Header.h"; sourceTree = "<group>"; };
 		DC34573120C9B070007DB7A2 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		DC34573220C9B071007DB7A2 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -184,6 +188,8 @@
 				DC34573D20CAFD98007DB7A2 /* ContentVC.swift */,
 				DCD803CF20C7152500359C61 /* ViewController.swift */,
 				DCCF492620C863D4003FADC4 /* MenuVC.swift */,
+				DC2298CF21079EA4004D306B /* CuentoVC.swift */,
+				DC2298CE21079EA2004D306B /* TipVC.swift */,
 				DCE8C07F20E6AF2000C95D4F /* ProjectVC.swift */,
 				DCA53BC020D9DD4D00E25A2D /* HomeVC.swift */,
 				DCCEEB6A20D8320F00E237F6 /* LoginViewController.swift */,
@@ -260,6 +266,7 @@
 				DCD803C720C7152500359C61 /* Frameworks */,
 				DCD803C820C7152500359C61 /* Resources */,
 				010A671C227C545265D72966 /* [CP] Embed Pods Frameworks */,
+				4E8DA0C70F172FCFB4344E00 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -392,11 +399,41 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Citrus/Pods-Citrus-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/MBCircularProgressBar/MBCircularProgressBar.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBCircularProgressBar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -419,6 +456,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4E8DA0C70F172FCFB4344E00 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Citrus/Pods-Citrus-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Citrus/Pods-Citrus-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		58F2C781EBCD4A4DF6F2FC61 /* [CP] Check Pods Manifest.lock */ = {
@@ -465,6 +520,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCD803D020C7152500359C61 /* ViewController.swift in Sources */,
+				DC2298D121079EA5004D306B /* CuentoVC.swift in Sources */,
 				DCA53BC120D9DD4D00E25A2D /* HomeVC.swift in Sources */,
 				DCA53BBF20D99FB300E25A2D /* Subject.swift in Sources */,
 				DCA53BC520D9DED100E25A2D /* HotCell.swift in Sources */,
@@ -480,6 +536,7 @@
 				DCCF492720C863D4003FADC4 /* MenuVC.swift in Sources */,
 				DCA53BC320D9DEB500E25A2D /* CategoriaCell.swift in Sources */,
 				DCBC6EE020CC60A70077BF1E /* SlideTVC.swift in Sources */,
+				DC2298D021079EA5004D306B /* TipVC.swift in Sources */,
 				DCE8C08020E6AF2000C95D4F /* ProjectVC.swift in Sources */,
 				DCE8C08420E6DCFE00C95D4F /* ProjectV.swift in Sources */,
 				DCCEEB6B20D8320F00E237F6 /* LoginViewController.swift in Sources */,
