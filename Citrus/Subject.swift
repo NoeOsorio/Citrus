@@ -11,6 +11,7 @@ import Foundation
 struct Subject{
     var title:String?
     var content:String?
+    var content2:String?
     var index:Int?
     var tests: [Test] = []
     
@@ -19,17 +20,32 @@ struct Subject{
         self.content = content
         self.index = index
     }
+    
+    init(title:String, content:String, content2:String, index:Int){
+        self.title = title
+        self.content = content
+        self.content2 = content2
+        self.index = index
+    }
+    
     init(){
         self.title = "Bienvenido"
         self.content = "Gracias por confiar en nosotros"
         self.index = 0
     }
+    
     mutating func setData(title:String, content:String, index:Int){
         self.title = title
         self.content = content
         self.index = index
     }
-    
+
+    mutating func setData(title:String, content:String, content2:String, index:Int){
+        self.title = title
+        self.content = content
+        self.content2 = content2
+        self.index = index
+    }
     
 }
 
