@@ -5,7 +5,7 @@
 //  Created by Noe Osorio on 19/06/18.
 //  Copyright © 2018 Noe Osorio. All rights reserved.
 //
-import FirebaseFirestore
+import 
 import UIKit
 
 class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource {
