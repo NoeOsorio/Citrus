@@ -33,8 +33,12 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var colores = [UIColor(red:0.01, green:0.62, blue:0.65, alpha:1.0)]
     
-    var materia:String?
+    //Ej: "Historia", "Matematicas"
+    var materia:String = info.materia
+    //Ej: "Cuento", "Redaccion"
     var proyecto:String?
+    //Ej: "Proyecto", "Curso"
+    var tipo:String = info.tipo!
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -45,13 +49,6 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "menucell", for: indexPath) as! MenuCell
         
-        /*if let img = iconos[indexPath.row]["icono"]{
-            cell.icon.image = UIImage(named: img)
-            cell.icon.tintColor = UIColor.white
-        }
-         cell.title.text = iconos[indexPath.row]["materia"]
-         cell.title.tintColor = UIColor.white
- */
         if let img = classicons[indexPath.row]["icono"]{
             cell.icon.image = UIImage(named: img)
             cell.icon.tintColor = UIColor.white
@@ -63,9 +60,18 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        proyecto = classicons[indexPath.row]["clase"]
-       // performSegue(withIdentifier: "lectura", sender: self)
-         performSegue(withIdentifier: "Proyecto", sender: self)
+        proyecto = classicons[indexPath.row]["clase"]!
+        if(tipo == "Proyectos"){
+            info.setProyecto(proyecto: proyecto!)
+            performSegue(withIdentifier: "proyecto", sender: self)
+        }
+        else if (tipo == "Cursos"){
+            info.setClase(clase: proyecto!)
+            performSegue(withIdentifier: "clase", sender: self)
+        }
+        
+       
+        
     }
     //Esto evita que la celda se ponga gris a la hora de tocarla
     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
@@ -95,7 +101,7 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         table.rowHeight = UITableViewAutomaticDimension
         sideMenu()
-        getClases(materia: materia!)
+        getClases(materia: materia)
         
         
     }
@@ -116,7 +122,7 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         //db.settings = settings
         
         //Referencia
-        let matRef = db.collection("Materias").document(materia).collection("Proyectos")
+        let matRef = db.collection("Materias").document(materia).collection(tipo)
         matRef.getDocuments { (clases, error) in
             if error != nil{
                 print("Clases no encontradas")
@@ -147,7 +153,7 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destino = segue.destination as? ProjectVC{
             destino.materia = materia
-            destino.proyecto = "Cuento"
+            destino.proyecto = proyecto
         }
     }
 }

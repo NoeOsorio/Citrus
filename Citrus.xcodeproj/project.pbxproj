@@ -15,6 +15,15 @@
 		C0F08403C1B5EA2CDA9B278D /* Pods_EduTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D69A6492AC2A04D12C09E69 /* Pods_EduTestUITests.framework */; };
 		DC2298D021079EA5004D306B /* TipVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2298CE21079EA2004D306B /* TipVC.swift */; };
 		DC2298D121079EA5004D306B /* CuentoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2298CF21079EA4004D306B /* CuentoVC.swift */; };
+		DC2C580A21137B1A00224BED /* biking_is_cool.json in Resources */ = {isa = PBXBuildFile; fileRef = DC2C580621137B1000224BED /* biking_is_cool.json */; };
+		DC2C580B21137B1A00224BED /* acrobatics.json in Resources */ = {isa = PBXBuildFile; fileRef = DC2C580721137B1200224BED /* acrobatics.json */; };
+		DC2C580C21137B1A00224BED /* so_excited.json in Resources */ = {isa = PBXBuildFile; fileRef = DC2C580821137B1300224BED /* so_excited.json */; };
+		DC2C580D21137B1A00224BED /* bikingishard.json in Resources */ = {isa = PBXBuildFile; fileRef = DC2C580921137B1400224BED /* bikingishard.json */; };
+		DC2C580F2113BF2D00224BED /* MenuClasesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2C580E2113BF2D00224BED /* MenuClasesVC.swift */; };
+		DC2C58112113C26B00224BED /* MenuClaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2C58102113C26B00224BED /* MenuClaseCell.swift */; };
+		DC2C5813211536E000224BED /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2C5812211536DF00224BED /* SearchVC.swift */; };
+		DC2C581521156C6A00224BED /* HomeClassVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2C581421156C6A00224BED /* HomeClassVC.swift */; };
+		DC2C581721157C4500224BED /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2C581621157C4500224BED /* Info.swift */; };
 		DC34573320C9B072007DB7A2 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC34573120C9B070007DB7A2 /* SWRevealViewController.m */; };
 		DC34573A20CA0973007DB7A2 /* LectureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC34573920CA0973007DB7A2 /* LectureCell.swift */; };
 		DC34573E20CAFD98007DB7A2 /* ContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC34573D20CAFD98007DB7A2 /* ContentVC.swift */; };
@@ -78,6 +87,15 @@
 		DA7D05E31346162F714332FD /* Pods-EduTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduTestUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EduTestUITests/Pods-EduTestUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DC2298CE21079EA2004D306B /* TipVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipVC.swift; sourceTree = "<group>"; };
 		DC2298CF21079EA4004D306B /* CuentoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CuentoVC.swift; sourceTree = "<group>"; };
+		DC2C580621137B1000224BED /* biking_is_cool.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = biking_is_cool.json; sourceTree = "<group>"; };
+		DC2C580721137B1200224BED /* acrobatics.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = acrobatics.json; sourceTree = "<group>"; };
+		DC2C580821137B1300224BED /* so_excited.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = so_excited.json; sourceTree = "<group>"; };
+		DC2C580921137B1400224BED /* bikingishard.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bikingishard.json; sourceTree = "<group>"; };
+		DC2C580E2113BF2D00224BED /* MenuClasesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuClasesVC.swift; sourceTree = "<group>"; };
+		DC2C58102113C26B00224BED /* MenuClaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuClaseCell.swift; sourceTree = "<group>"; };
+		DC2C5812211536DF00224BED /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		DC2C581421156C6A00224BED /* HomeClassVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeClassVC.swift; sourceTree = "<group>"; };
+		DC2C581621157C4500224BED /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		DC34573020C9B06E007DB7A2 /* Citrus-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Citrus-Bridging-Header.h"; sourceTree = "<group>"; };
 		DC34573120C9B070007DB7A2 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		DC34573220C9B071007DB7A2 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -184,6 +202,11 @@
 		DCD803CC20C7152500359C61 /* Citrus */ = {
 			isa = PBXGroup;
 			children = (
+				DC2C581621157C4500224BED /* Info.swift */,
+				DC2C580721137B1200224BED /* acrobatics.json */,
+				DC2C580621137B1000224BED /* biking_is_cool.json */,
+				DC2C580921137B1400224BED /* bikingishard.json */,
+				DC2C580821137B1300224BED /* so_excited.json */,
 				DC6BEE0120CB5A9E00C9B0B4 /* ProgressVC.swift */,
 				DC34573D20CAFD98007DB7A2 /* ContentVC.swift */,
 				DCD803CF20C7152500359C61 /* ViewController.swift */,
@@ -191,6 +214,7 @@
 				DC2298CF21079EA4004D306B /* CuentoVC.swift */,
 				DC2298CE21079EA2004D306B /* TipVC.swift */,
 				DCE8C07F20E6AF2000C95D4F /* ProjectVC.swift */,
+				DC2C581421156C6A00224BED /* HomeClassVC.swift */,
 				DCA53BC020D9DD4D00E25A2D /* HomeVC.swift */,
 				DCCEEB6A20D8320F00E237F6 /* LoginViewController.swift */,
 				DCCEEB6C20D8323B00E237F6 /* SignUpViewController.swift */,
@@ -213,6 +237,9 @@
 				DC34573220C9B071007DB7A2 /* SWRevealViewController.h */,
 				DC34573020C9B06E007DB7A2 /* Citrus-Bridging-Header.h */,
 				DCD803D920C7152500359C61 /* Info.plist */,
+				DC2C580E2113BF2D00224BED /* MenuClasesVC.swift */,
+				DC2C58102113C26B00224BED /* MenuClaseCell.swift */,
+				DC2C5812211536DF00224BED /* SearchVC.swift */,
 			);
 			path = Citrus;
 			sourceTree = "<group>";
@@ -367,10 +394,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC2C580D21137B1A00224BED /* bikingishard.json in Resources */,
+				DC2C580A21137B1A00224BED /* biking_is_cool.json in Resources */,
 				DCD803D820C7152500359C61 /* LaunchScreen.storyboard in Resources */,
 				DCCEEB6F20D83E3900E237F6 /* GoogleService-Info.plist in Resources */,
 				DCCF492B20C873DC003FADC4 /* Assets 14-55-59-167.xcassets in Resources */,
+				DC2C580B21137B1A00224BED /* acrobatics.json in Resources */,
 				DCE8C08220E6DCDA00C95D4F /* ProjectContent.xib in Resources */,
+				DC2C580C21137B1A00224BED /* so_excited.json in Resources */,
 				DCD803D320C7152500359C61 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -519,14 +550,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC2C5813211536E000224BED /* SearchVC.swift in Sources */,
 				DCD803D020C7152500359C61 /* ViewController.swift in Sources */,
 				DC2298D121079EA5004D306B /* CuentoVC.swift in Sources */,
+				DC2C581721157C4500224BED /* Info.swift in Sources */,
+				DC2C58112113C26B00224BED /* MenuClaseCell.swift in Sources */,
 				DCA53BC120D9DD4D00E25A2D /* HomeVC.swift in Sources */,
 				DCA53BBF20D99FB300E25A2D /* Subject.swift in Sources */,
 				DCA53BC520D9DED100E25A2D /* HotCell.swift in Sources */,
 				DC6BEE0220CB5A9E00C9B0B4 /* ProgressVC.swift in Sources */,
 				DC34573A20CA0973007DB7A2 /* LectureCell.swift in Sources */,
 				DCCF492920C863E6003FADC4 /* MenuCell.swift in Sources */,
+				DC2C580F2113BF2D00224BED /* MenuClasesVC.swift in Sources */,
 				DC34573320C9B072007DB7A2 /* SWRevealViewController.m in Sources */,
 				DC34573E20CAFD98007DB7A2 /* ContentVC.swift in Sources */,
 				DCCEEB6D20D8323C00E237F6 /* SignUpViewController.swift in Sources */,
@@ -538,6 +573,7 @@
 				DCBC6EE020CC60A70077BF1E /* SlideTVC.swift in Sources */,
 				DC2298D021079EA5004D306B /* TipVC.swift in Sources */,
 				DCE8C08020E6AF2000C95D4F /* ProjectVC.swift in Sources */,
+				DC2C581521156C6A00224BED /* HomeClassVC.swift in Sources */,
 				DCE8C08420E6DCFE00C95D4F /* ProjectV.swift in Sources */,
 				DCCEEB6B20D8320F00E237F6 /* LoginViewController.swift in Sources */,
 			);

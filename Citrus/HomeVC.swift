@@ -8,6 +8,8 @@
 import FirebaseFirestore
 import UIKit
 
+
+
 class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet var noticiasTabla: UITableView!
@@ -155,7 +157,7 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoria", for: indexPath) as! CategoriaCell
         
-        cell.bg.image = UIImage(named:"orangebg")
+        //cell.bg.image = UIImage(named:"orangebg")
         cell.layer.cornerRadius = 15
         cell.title.text = categorias[indexPath.row]
         
@@ -163,6 +165,8 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICo
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         materia = categorias[indexPath.row]
+        info.setMateria(materia: materia!)
+        info.setTipo(tipo: "Cursos")
         //getClases(materia: materia!)
         //performSegue(withIdentifier: "Clase", sender: self)
         performSegue(withIdentifier: "curso", sender: self)
@@ -179,7 +183,7 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICo
             mostrarNoticia.noticia = noticias[selectedNoticia!]
         }*/
         if let destiny = segue.destination as? MenuVC{
-            destiny.materia = materia
+            destiny.materia = materia!
             //getClases(materia: materia!)
             //destiny.classicons = clasesicon
         }

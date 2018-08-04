@@ -5,7 +5,7 @@
 //  Created by Noe Osorio on 19/06/18.
 //  Copyright © 2018 Noe Osorio. All rights reserved.
 //
-
+import FirebaseFirestore
 import Foundation
 
 struct Subject{
@@ -73,5 +73,26 @@ struct Noticia{
     mutating func setData(title:String, content:String){
         self.title = title
         self.content = content
+    }
+}
+
+struct Clase{
+    
+    var path:String
+    var title:String
+    var index:Int
+    var like:Bool = false
+    var watched:Bool = false
+    
+    init(title:String, index:Int, path:String) {
+        self.title = title
+        self.index = index
+        self.path = path
+    }
+    mutating func setLike(bool:Bool){
+        self.like = bool
+    }
+    mutating func setWatched(bool:Bool){
+        self.watched = bool
     }
 }
