@@ -17,6 +17,7 @@ struct Info {
     var curso:String?
     var proyecto:String?
     var clase:String?
+    var user:User?
     
     init(){
         self.materia = "Materia"
@@ -46,9 +47,7 @@ struct Info {
     mutating func getUser() -> User{
         var currentUser:User?
         
-        //_ = Auth.auth().addStateDidChangeListener({ (auth, user) in
-            currentUser = Auth.auth().currentUser
-        //})
+        currentUser = Auth.auth().currentUser
         
         if(currentUser != nil) {
             print("Current user: \(String(describing: currentUser))")
@@ -57,6 +56,26 @@ struct Info {
             print("Error: No user signed in")
             currentUser = nil
         }
+        self.user = currentUser
         return currentUser!
     }
+    
+    mutating func getEmail() -> String {
+        let email = user?.email
+        print("User email: \(String(describing: email))")
+        return email!
+    }
+    
+    mutating func getUID() -> String {
+        let uid = user?.uid
+        print("User UID: \(String(describing: uid))")
+        return uid!
+    }
+    
+    mutating func getPhotoURL() -> URL {
+        let photoURL = user?.photoURL
+        print("User photo URL: \(String(describing: photoURL))")
+        return photoURL!
+    }
+    
 }
