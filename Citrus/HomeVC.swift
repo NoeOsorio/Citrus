@@ -12,48 +12,20 @@ import UIKit
 
 class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    @IBOutlet var noticiasTabla: UITableView!
+    @IBOutlet var cursosTabla: UITableView!
     @IBOutlet var categoriaColection: UICollectionView!
     //Variables
     var categorias:[String] = []
-    var noticias:[Noticia] = []
-    var proyectos:[[[String:String]]] = []
-    var clasesicon:[[String:String]] = []
-    var selectedNoticia:Int?
+    var cursos:[[String:String]] = []
     var materia:String?
     var proyecto:String?
+    var tipo = "Cursos"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         getData()
-        getNoticias()
     }
     
-    func getNoticias(){
-        //DataBase
-        let db = Firestore.firestore()
-        let settings = db.settings
-        settings.areTimestampsInSnapshotsEnabled = true
-        db.settings = settings
-        
-        //Referencia
-        let notiRef = db.collection("Noticias")
-        notiRef.getDocuments { (noti, error) in
-            if error != nil{
-                print("No hay noticias")
-            }
-            else{
-                for noticia in (noti?.documents)!{
-                    if let titulo = noticia.data()["Titulo"] as? String{
-                        if let contenido = noticia.data()["Contenido"] as? String{
-                            self.noticias.append(Noticia(title: titulo, content: contenido))
-                            self.insertNoti()
-                        }
-                    }
-                }
-            }
-        }
-    }
     
     func getData(){
         //DataBase
@@ -78,42 +50,41 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICo
                         
                     }
                 }
+                self.getCursos(tipo: self.tipo)
                 //self.insertCellAt()
             }
         }
     }
     
-    func getClases(materia:String){
+    func getCursos(tipo:String){
         
         //Variables
-        var classicons:[[String:String]] = []
-        clasesicon.removeAll()
         
         //DataBase
         let db = Firestore.firestore()
-        //let settings = db.settings
-        //settings.areTimestampsInSnapshotsEnabled = true
-        //db.settings = settings
         
         //Referencia
-        let matRef = db.collection("Materias").document(materia).collection("Proyectos")
-        matRef.getDocuments { (clases, error) in
-            if error != nil{
-                print("Clases no encontradas")
-            }
-            else{
-                for clase in (clases?.documents)!{
-                    if let titulo = clase.data()["Titulo"] as? String{
-                        if let icono = clase.data()["Icono"] as? String{
-                            classicons.append(["clase":titulo,"icono":icono])
-                            self.clasesicon.append(["clase":titulo,"icono":icono])
+        
+        for materia in categorias{
+            let matRef = db.collection("Materias").document(materia).collection(tipo)
+            matRef.getDocuments { (cursos, error) in
+                if error != nil{
+                    print("Cursos no encontradas")
+                }
+                else{
+                    for curso in (cursos?.documents)!{
+                        if let titulo = curso.data()["Titulo"] as? String{
+                            if let icono = curso.data()["Icono"] as? String{
+                                self.cursos.append(["curso":titulo,"icono":icono, "materia":materia])
+                                self.insertCurso()
+                            }
+                            
                         }
-                        
                     }
                 }
-                self.proyectos.append(classicons)
             }
         }
+        
     }
     
     func insertCategoria(){
@@ -122,31 +93,39 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICo
         self.categoriaColection.insertItems(at: [newIndexPath])
     }
     
-    func insertNoti(){
-        self.noticiasTabla.beginUpdates()
-        self.noticiasTabla.insertRows(at: [IndexPath.init(row: self.noticias.count-1, section: 0)], with: .automatic)
-        self.noticiasTabla.endUpdates()
+    func insertCurso(){
+        let indexPath = IndexPath(row: cursos.count-1, section: 0)
+        
+        self.cursosTabla.beginUpdates()
+        self.cursosTabla.insertRows(at: [indexPath], with: .automatic)
+        self.cursosTabla.endUpdates()
         
     }
     
     //Tabla
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return noticias.count
+        return cursos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "hot", for: indexPath) as! HotCell
         
-        cell.bgimage.image = UIImage(named: "orange.png")
-        cell.title.text = noticias[indexPath.row].title
-        //cell.content.text = noticias[indexPath.row].content
+        cell.contentDicc = cursos[indexPath.row]
+        let cursosContent = cell.contentDicc!
+        
+        cell.bgimage.image = UIImage(named: cursosContent["icono"]!)
+        cell.title.text = cursosContent["curso"]! + " : " + cursosContent["materia"]!
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedNoticia = indexPath.row
-        performSegue(withIdentifier: "Noticia", sender: self)
+        let selected = tableView.cellForRow(at: indexPath) as! HotCell
+        
+        info.setMateria(materia: selected.contentDicc!["materia"]!)
+        info.setTipo(tipo: tipo)
+        info.setCurso(curso: selected.contentDicc!["curso"]!)
+        performSegue(withIdentifier: "cursito", sender: self)
     }
     
     //Collection Categorias
@@ -167,8 +146,6 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICo
         materia = categorias[indexPath.row]
         info.setMateria(materia: materia!)
         info.setTipo(tipo: "Cursos")
-        //getClases(materia: materia!)
-        //performSegue(withIdentifier: "Clase", sender: self)
         performSegue(withIdentifier: "curso", sender: self)
        
         
@@ -179,13 +156,9 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICo
             destino.materia = materia
             destino.proyecto = "Cuento"
         }
-        /*if let mostrarNoticia = segue.destination as? ContentVC{
-            mostrarNoticia.noticia = noticias[selectedNoticia!]
-        }*/
+        
         if let destiny = segue.destination as? MenuVC{
             destiny.materia = materia!
-            //getClases(materia: materia!)
-            //destiny.classicons = clasesicon
         }
     }
     

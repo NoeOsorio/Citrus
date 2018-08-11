@@ -27,12 +27,14 @@
 		DC34573320C9B072007DB7A2 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC34573120C9B070007DB7A2 /* SWRevealViewController.m */; };
 		DC34573A20CA0973007DB7A2 /* LectureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC34573920CA0973007DB7A2 /* LectureCell.swift */; };
 		DC34573E20CAFD98007DB7A2 /* ContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC34573D20CAFD98007DB7A2 /* ContentVC.swift */; };
+		DC5AA101211F9AA200CAEDAB /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5AA100211F9AA200CAEDAB /* Gradient.swift */; };
 		DC6BEE0220CB5A9E00C9B0B4 /* ProgressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6BEE0120CB5A9E00C9B0B4 /* ProgressVC.swift */; };
 		DCA53BBF20D99FB300E25A2D /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53BBE20D99FB300E25A2D /* Subject.swift */; };
 		DCA53BC120D9DD4D00E25A2D /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53BC020D9DD4D00E25A2D /* HomeVC.swift */; };
 		DCA53BC320D9DEB500E25A2D /* CategoriaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53BC220D9DEB500E25A2D /* CategoriaCell.swift */; };
 		DCA53BC520D9DED100E25A2D /* HotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53BC420D9DED100E25A2D /* HotCell.swift */; };
 		DCBC6EE020CC60A70077BF1E /* SlideTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBC6EDF20CC60A70077BF1E /* SlideTVC.swift */; };
+		DCCE04A021161DD1003C82CB /* NoticiasVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCE049F21161DD1003C82CB /* NoticiasVC.swift */; };
 		DCCEEB6B20D8320F00E237F6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCEEB6A20D8320F00E237F6 /* LoginViewController.swift */; };
 		DCCEEB6D20D8323C00E237F6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCEEB6C20D8323B00E237F6 /* SignUpViewController.swift */; };
 		DCCEEB6F20D83E3900E237F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DCCEEB6E20D83E3800E237F6 /* GoogleService-Info.plist */; };
@@ -45,9 +47,9 @@
 		DCD803D820C7152500359C61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCD803D620C7152500359C61 /* LaunchScreen.storyboard */; };
 		DCD803E320C7152600359C61 /* EduTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD803E220C7152600359C61 /* EduTestTests.swift */; };
 		DCD803EE20C7152600359C61 /* EduTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD803ED20C7152600359C61 /* EduTestUITests.swift */; };
+		DCDBF3702119F6C5009C4920 /* ProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDBF36F2119F6C4009C4920 /* ProgressCell.swift */; };
 		DCE8C07E20E6AEF900C95D4F /* ProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE8C07D20E6AEF900C95D4F /* ProjectCell.swift */; };
 		DCE8C08020E6AF2000C95D4F /* ProjectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE8C07F20E6AF2000C95D4F /* ProjectVC.swift */; };
-		DCE8C08220E6DCDA00C95D4F /* ProjectContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCE8C08120E6DCDA00C95D4F /* ProjectContent.xib */; };
 		DCE8C08420E6DCFE00C95D4F /* ProjectV.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE8C08320E6DCFE00C95D4F /* ProjectV.swift */; };
 /* End PBXBuildFile section */
 
@@ -101,12 +103,14 @@
 		DC34573220C9B071007DB7A2 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		DC34573920CA0973007DB7A2 /* LectureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureCell.swift; sourceTree = "<group>"; };
 		DC34573D20CAFD98007DB7A2 /* ContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentVC.swift; path = ViewControllers/ContentVC.swift; sourceTree = "<group>"; };
+		DC5AA100211F9AA200CAEDAB /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
 		DC6BEE0120CB5A9E00C9B0B4 /* ProgressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressVC.swift; sourceTree = "<group>"; };
 		DCA53BBE20D99FB300E25A2D /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
 		DCA53BC020D9DD4D00E25A2D /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		DCA53BC220D9DEB500E25A2D /* CategoriaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriaCell.swift; sourceTree = "<group>"; };
 		DCA53BC420D9DED100E25A2D /* HotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotCell.swift; sourceTree = "<group>"; };
 		DCBC6EDF20CC60A70077BF1E /* SlideTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideTVC.swift; sourceTree = "<group>"; };
+		DCCE049F21161DD1003C82CB /* NoticiasVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticiasVC.swift; sourceTree = "<group>"; };
 		DCCEEB6A20D8320F00E237F6 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DCCEEB6C20D8323B00E237F6 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		DCCEEB6E20D83E3800E237F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -125,9 +129,9 @@
 		DCD803E920C7152600359C61 /* CitrusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CitrusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCD803ED20C7152600359C61 /* EduTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EduTestUITests.swift; sourceTree = "<group>"; };
 		DCD803EF20C7152600359C61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCDBF36F2119F6C4009C4920 /* ProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCell.swift; sourceTree = "<group>"; };
 		DCE8C07D20E6AEF900C95D4F /* ProjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCell.swift; sourceTree = "<group>"; };
 		DCE8C07F20E6AF2000C95D4F /* ProjectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectVC.swift; sourceTree = "<group>"; };
-		DCE8C08120E6DCDA00C95D4F /* ProjectContent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectContent.xib; sourceTree = "<group>"; };
 		DCE8C08320E6DCFE00C95D4F /* ProjectV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectV.swift; sourceTree = "<group>"; };
 		E37535940A6163FA1D4EBFAF /* Pods-EduTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduTestTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EduTestTests/Pods-EduTestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E8E4B52ECC3184AE468389D2 /* Pods-EduTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduTestTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EduTestTests/Pods-EduTestTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -202,11 +206,12 @@
 		DCD803CC20C7152500359C61 /* Citrus */ = {
 			isa = PBXGroup;
 			children = (
-				DC2C581621157C4500224BED /* Info.swift */,
 				DC2C580721137B1200224BED /* acrobatics.json */,
 				DC2C580621137B1000224BED /* biking_is_cool.json */,
 				DC2C580921137B1400224BED /* bikingishard.json */,
 				DC2C580821137B1300224BED /* so_excited.json */,
+				DC2C581621157C4500224BED /* Info.swift */,
+				DCDBF36F2119F6C4009C4920 /* ProgressCell.swift */,
 				DC6BEE0120CB5A9E00C9B0B4 /* ProgressVC.swift */,
 				DC34573D20CAFD98007DB7A2 /* ContentVC.swift */,
 				DCD803CF20C7152500359C61 /* ViewController.swift */,
@@ -224,7 +229,6 @@
 				DCD803CD20C7152500359C61 /* AppDelegate.swift */,
 				DCCF492A20C873DC003FADC4 /* Assets 14-55-59-167.xcassets */,
 				DCD803D120C7152500359C61 /* Main.storyboard */,
-				DCE8C08120E6DCDA00C95D4F /* ProjectContent.xib */,
 				DCE8C08320E6DCFE00C95D4F /* ProjectV.swift */,
 				DCE8C07D20E6AEF900C95D4F /* ProjectCell.swift */,
 				DCA53BC220D9DEB500E25A2D /* CategoriaCell.swift */,
@@ -233,6 +237,7 @@
 				DCCF492820C863E6003FADC4 /* MenuCell.swift */,
 				DC34573920CA0973007DB7A2 /* LectureCell.swift */,
 				DCD803D620C7152500359C61 /* LaunchScreen.storyboard */,
+				DC5AA100211F9AA200CAEDAB /* Gradient.swift */,
 				DC34573120C9B070007DB7A2 /* SWRevealViewController.m */,
 				DC34573220C9B071007DB7A2 /* SWRevealViewController.h */,
 				DC34573020C9B06E007DB7A2 /* Citrus-Bridging-Header.h */,
@@ -240,6 +245,7 @@
 				DC2C580E2113BF2D00224BED /* MenuClasesVC.swift */,
 				DC2C58102113C26B00224BED /* MenuClaseCell.swift */,
 				DC2C5812211536DF00224BED /* SearchVC.swift */,
+				DCCE049F21161DD1003C82CB /* NoticiasVC.swift */,
 			);
 			path = Citrus;
 			sourceTree = "<group>";
@@ -400,7 +406,6 @@
 				DCCEEB6F20D83E3900E237F6 /* GoogleService-Info.plist in Resources */,
 				DCCF492B20C873DC003FADC4 /* Assets 14-55-59-167.xcassets in Resources */,
 				DC2C580B21137B1A00224BED /* acrobatics.json in Resources */,
-				DCE8C08220E6DCDA00C95D4F /* ProjectContent.xib in Resources */,
 				DC2C580C21137B1A00224BED /* so_excited.json in Resources */,
 				DCD803D320C7152500359C61 /* Main.storyboard in Resources */,
 			);
@@ -560,13 +565,16 @@
 				DCA53BC520D9DED100E25A2D /* HotCell.swift in Sources */,
 				DC6BEE0220CB5A9E00C9B0B4 /* ProgressVC.swift in Sources */,
 				DC34573A20CA0973007DB7A2 /* LectureCell.swift in Sources */,
+				DCCE04A021161DD1003C82CB /* NoticiasVC.swift in Sources */,
 				DCCF492920C863E6003FADC4 /* MenuCell.swift in Sources */,
 				DC2C580F2113BF2D00224BED /* MenuClasesVC.swift in Sources */,
+				DC5AA101211F9AA200CAEDAB /* Gradient.swift in Sources */,
 				DC34573320C9B072007DB7A2 /* SWRevealViewController.m in Sources */,
 				DC34573E20CAFD98007DB7A2 /* ContentVC.swift in Sources */,
 				DCCEEB6D20D8323C00E237F6 /* SignUpViewController.swift in Sources */,
 				DCD803CE20C7152500359C61 /* AppDelegate.swift in Sources */,
 				DCE8C07E20E6AEF900C95D4F /* ProjectCell.swift in Sources */,
+				DCDBF3702119F6C5009C4920 /* ProgressCell.swift in Sources */,
 				5C5B2A4D20CC4FE600941D08 /* QuestionViewController.swift in Sources */,
 				DCCF492720C863D4003FADC4 /* MenuVC.swift in Sources */,
 				DCA53BC320D9DEB500E25A2D /* CategoriaCell.swift in Sources */,

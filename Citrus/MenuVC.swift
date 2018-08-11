@@ -130,7 +130,7 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             else{
                 for clase in (clases?.documents)!{
                     if let titulo = clase.data()["Titulo"] as? String{
-                        if let icono = clase.data()["Icono"] as? String{
+                        if let icono = clase.data()["Iconobw"] as? String{
                             self.classicons.append(["clase":titulo,"icono":icono])
                             self.insertClass()
                         }
@@ -156,4 +156,9 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             destino.proyecto = proyecto
         }
     }
+    
+    @IBAction func exit(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }

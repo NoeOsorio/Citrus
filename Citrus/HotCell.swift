@@ -13,6 +13,9 @@ class HotCell: UITableViewCell {
     @IBOutlet var bgimage: UIImageView!
     @IBOutlet var title: UILabel!
     @IBOutlet var content: UITextView!
+    
+    var contentDicc:[String:String]?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
