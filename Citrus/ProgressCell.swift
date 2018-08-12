@@ -10,6 +10,7 @@ import UIKit
 
 class ProgressCell: UITableViewCell {
 
+    @IBOutlet var blur: UIVisualEffectView!
     @IBOutlet var progress: MBCircularProgressBarView!
     @IBOutlet var title: UILabel!
     @IBOutlet var icon: UIImageView!
@@ -19,6 +20,7 @@ class ProgressCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
         if progressValue != nil{
             UIView.animate(withDuration: 10.0) {
                 self.progress.value = self.progressValue!

@@ -113,6 +113,7 @@ class HomeClassVC:UIViewController, UITableViewDelegate, UITableViewDataSource, 
         
         cell.bgimage.image = UIImage(named: cursosContent["icono"]!)
         cell.title.text = cursosContent["proyecto"]! + " : " + cursosContent["materia"]!
+        cell.layer.cornerRadius = 15
         
         return cell
     }
@@ -151,7 +152,7 @@ class HomeClassVC:UIViewController, UITableViewDelegate, UITableViewDataSource, 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destino = segue.destination as? ProjectVC{
-            destino.materia = materia
+            //destino.materia = materia
             destino.proyecto = "Cuento"
         }
         

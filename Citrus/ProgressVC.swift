@@ -50,6 +50,7 @@ class ProgressVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         cell.title.text = "Algun Curso"
         cell.icon.image = #imageLiteral(resourceName: "apple")
         cell.progress.value = 40
+        cell.layer.cornerRadius = 15
         
         return cell
     }

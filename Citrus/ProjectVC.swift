@@ -22,7 +22,7 @@ class ProjectVC: UIViewController, UIScrollViewDelegate{
     var counter = 0
     
     //Variables que se modifican dependiendo lo que eliga el usuario
-    var materia:String?
+    var materia = info.materia
     var proyecto:String?
     
     override func viewDidLoad() {
@@ -102,7 +102,7 @@ class ProjectVC: UIViewController, UIScrollViewDelegate{
         let db = Firestore.firestore()
         
         //Referencia de la coleccion
-        let docRef = db.collection("Materias/"+self.materia!+"/Proyectos/"+self.proyecto!+"/Clase")
+        let docRef = db.collection("Materias/"+self.materia+"/Proyectos/"+self.proyecto!+"/Clase")
         
         //Obtener los datos del contenido por clase
         docRef.whereField("Index", isEqualTo: index).getDocuments{ (snapshot, error) in
