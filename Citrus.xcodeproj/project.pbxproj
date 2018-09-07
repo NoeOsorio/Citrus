@@ -3,10 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		226D25972140F8A7008BF671 /* PersonalityInsightsV3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226D25962140F8A7008BF671 /* PersonalityInsightsV3.framework */; };
+		227926002140E2CA00164AB6 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227925FF2140E2CA00164AB6 /* Credentials.swift */; };
+		227926022140E36900164AB6 /* WatsonUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227926012140E36900164AB6 /* WatsonUser.swift */; };
+		22DD89E82140D0CE0072EAA9 /* AssistantVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DD89E72140D0CD0072EAA9 /* AssistantVC.swift */; };
+		22DD89FA2140D8C40072EAA9 /* AssistantV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DD89ED2140D8C20072EAA9 /* AssistantV1.framework */; };
+		22EA21132140DA23004F5557 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EA21092140DA21004F5557 /* Starscream.framework */; };
+		22EA21152140DA23004F5557 /* SpeechToTextV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EA210B2140DA22004F5557 /* SpeechToTextV1.framework */; };
+		22EA21162140DA23004F5557 /* RestKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EA210C2140DA22004F5557 /* RestKit.framework */; };
+		22EA21172140DA23004F5557 /* TextToSpeechV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EA210D2140DA22004F5557 /* TextToSpeechV1.framework */; };
+		22EA211D2140DA78004F5557 /* DiscoveryV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DD89F42140D8C30072EAA9 /* DiscoveryV1.framework */; };
 		2EF71E844AC417B701E46408 /* Pods_CitrusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44E3533FEF75B171ABBDDDA4 /* Pods_CitrusTests.framework */; };
 		41EDB3D46982CD6B870726E9 /* Pods_CitrusUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 152A8C4F6F7A721FEF9DBF93 /* Pods_CitrusUITests.framework */; };
 		517358D37FD6C76E07B56CC7 /* Pods_EduTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74A03771C0DD0F0B77EFF930 /* Pods_EduTestTests.framework */; };
@@ -74,6 +84,18 @@
 		0079E2D8ECD176700E345946 /* Pods-EduTestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduTestUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EduTestUITests/Pods-EduTestUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		03B55099E1326F03337EC479 /* Pods-CitrusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CitrusTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CitrusTests/Pods-CitrusTests.debug.xcconfig"; sourceTree = "<group>"; };
 		152A8C4F6F7A721FEF9DBF93 /* Pods_CitrusUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CitrusUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		226D25962140F8A7008BF671 /* PersonalityInsightsV3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PersonalityInsightsV3.framework; path = Carthage/Build/iOS/PersonalityInsightsV3.framework; sourceTree = "<group>"; };
+		227925FF2140E2CA00164AB6 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		227926012140E36900164AB6 /* WatsonUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatsonUser.swift; sourceTree = "<group>"; };
+		22DD89E72140D0CD0072EAA9 /* AssistantVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssistantVC.swift; sourceTree = "<group>"; };
+		22DD89ED2140D8C20072EAA9 /* AssistantV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssistantV1.framework; path = Carthage/Build/iOS/AssistantV1.framework; sourceTree = "<group>"; };
+		22DD89F32140D8C30072EAA9 /* ConversationV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ConversationV1.framework; path = Carthage/Build/iOS/ConversationV1.framework; sourceTree = "<group>"; };
+		22DD89F42140D8C30072EAA9 /* DiscoveryV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DiscoveryV1.framework; path = Carthage/Build/iOS/DiscoveryV1.framework; sourceTree = "<group>"; };
+		22EA21092140DA21004F5557 /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = Carthage/Build/iOS/Starscream.framework; sourceTree = "<group>"; };
+		22EA210B2140DA22004F5557 /* SpeechToTextV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpeechToTextV1.framework; path = Carthage/Build/iOS/SpeechToTextV1.framework; sourceTree = "<group>"; };
+		22EA210C2140DA22004F5557 /* RestKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RestKit.framework; path = Carthage/Build/iOS/RestKit.framework; sourceTree = "<group>"; };
+		22EA210D2140DA22004F5557 /* TextToSpeechV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TextToSpeechV1.framework; path = Carthage/Build/iOS/TextToSpeechV1.framework; sourceTree = "<group>"; };
+		22EA210E2140DA22004F5557 /* ToneAnalyzerV3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ToneAnalyzerV3.framework; path = Carthage/Build/iOS/ToneAnalyzerV3.framework; sourceTree = "<group>"; };
 		2D6657C5D008487658D78953 /* Pods-Citrus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Citrus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Citrus/Pods-Citrus.debug.xcconfig"; sourceTree = "<group>"; };
 		308007C7177A058DC3712176 /* Pods-EduTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EduTest/Pods-EduTest.debug.xcconfig"; sourceTree = "<group>"; };
 		31562EFC2A46BDE58EAD3A8B /* Pods-CitrusUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CitrusUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CitrusUITests/Pods-CitrusUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -143,6 +165,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				226D25972140F8A7008BF671 /* PersonalityInsightsV3.framework in Frameworks */,
+				22EA211D2140DA78004F5557 /* DiscoveryV1.framework in Frameworks */,
+				22EA21132140DA23004F5557 /* Starscream.framework in Frameworks */,
+				22EA21152140DA23004F5557 /* SpeechToTextV1.framework in Frameworks */,
+				22EA21162140DA23004F5557 /* RestKit.framework in Frameworks */,
+				22EA21172140DA23004F5557 /* TextToSpeechV1.framework in Frameworks */,
+				22DD89FA2140D8C40072EAA9 /* AssistantV1.framework in Frameworks */,
 				AE6C0625BEC539A423D738B2 /* Pods_Citrus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -171,6 +200,15 @@
 		3D09DDBCF75A68B977220867 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				226D25962140F8A7008BF671 /* PersonalityInsightsV3.framework */,
+				22EA210C2140DA22004F5557 /* RestKit.framework */,
+				22EA210B2140DA22004F5557 /* SpeechToTextV1.framework */,
+				22EA21092140DA21004F5557 /* Starscream.framework */,
+				22EA210D2140DA22004F5557 /* TextToSpeechV1.framework */,
+				22EA210E2140DA22004F5557 /* ToneAnalyzerV3.framework */,
+				22DD89ED2140D8C20072EAA9 /* AssistantV1.framework */,
+				22DD89F32140D8C30072EAA9 /* ConversationV1.framework */,
+				22DD89F42140D8C30072EAA9 /* DiscoveryV1.framework */,
 				3B109A4F562B01E9B6B883C7 /* Pods_EduTest.framework */,
 				74A03771C0DD0F0B77EFF930 /* Pods_EduTestTests.framework */,
 				6D69A6492AC2A04D12C09E69 /* Pods_EduTestUITests.framework */,
@@ -246,6 +284,9 @@
 				DC2C58102113C26B00224BED /* MenuClaseCell.swift */,
 				DC2C5812211536DF00224BED /* SearchVC.swift */,
 				DCCE049F21161DD1003C82CB /* NoticiasVC.swift */,
+				22DD89E72140D0CD0072EAA9 /* AssistantVC.swift */,
+				227925FF2140E2CA00164AB6 /* Credentials.swift */,
+				227926012140E36900164AB6 /* WatsonUser.swift */,
 			);
 			path = Citrus;
 			sourceTree = "<group>";
@@ -300,6 +341,7 @@
 				DCD803C820C7152500359C61 /* Resources */,
 				010A671C227C545265D72966 /* [CP] Embed Pods Frameworks */,
 				4E8DA0C70F172FCFB4344E00 /* [CP] Copy Pods Resources */,
+				22EA211E2140DA83004F5557 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -376,7 +418,7 @@
 				};
 			};
 			buildConfigurationList = DCD803C520C7152500359C61 /* Build configuration list for PBXProject "Citrus" */;
-			compatibilityVersion = "Xcode 8.0";
+			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -442,6 +484,8 @@
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework",
 				"${BUILT_PRODUCTS_DIR}/MBCircularProgressBar/MBCircularProgressBar.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
@@ -461,6 +505,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQSystemSoundPlayer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBCircularProgressBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
@@ -493,6 +539,26 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		22EA211E2140DA83004F5557 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/AssistantV1.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/DiscoveryV1.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/TextToSpeechV1.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RestKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SpeechToTextV1.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Starscream.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/PersonalityInsightsV3.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
 		4E8DA0C70F172FCFB4344E00 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -559,6 +625,7 @@
 				DCD803D020C7152500359C61 /* ViewController.swift in Sources */,
 				DC2298D121079EA5004D306B /* CuentoVC.swift in Sources */,
 				DC2C581721157C4500224BED /* Info.swift in Sources */,
+				227926022140E36900164AB6 /* WatsonUser.swift in Sources */,
 				DC2C58112113C26B00224BED /* MenuClaseCell.swift in Sources */,
 				DCA53BC120D9DD4D00E25A2D /* HomeVC.swift in Sources */,
 				DCA53BBF20D99FB300E25A2D /* Subject.swift in Sources */,
@@ -574,10 +641,12 @@
 				DCCEEB6D20D8323C00E237F6 /* SignUpViewController.swift in Sources */,
 				DCD803CE20C7152500359C61 /* AppDelegate.swift in Sources */,
 				DCE8C07E20E6AEF900C95D4F /* ProjectCell.swift in Sources */,
+				22DD89E82140D0CE0072EAA9 /* AssistantVC.swift in Sources */,
 				DCDBF3702119F6C5009C4920 /* ProgressCell.swift in Sources */,
 				5C5B2A4D20CC4FE600941D08 /* QuestionViewController.swift in Sources */,
 				DCCF492720C863D4003FADC4 /* MenuVC.swift in Sources */,
 				DCA53BC320D9DEB500E25A2D /* CategoriaCell.swift in Sources */,
+				227926002140E2CA00164AB6 /* Credentials.swift in Sources */,
 				DCBC6EE020CC60A70077BF1E /* SlideTVC.swift in Sources */,
 				DC2298D021079EA5004D306B /* TipVC.swift in Sources */,
 				DCE8C08020E6AF2000C95D4F /* ProjectVC.swift in Sources */,
@@ -740,7 +809,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -753,9 +823,16 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9NB6C6JTK7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Citrus/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.DevMx.Citrus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Citrus/Citrus-Bridging-Header.h";
@@ -773,9 +850,16 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9NB6C6JTK7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Citrus/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.DevMx.Citrus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Citrus/Citrus-Bridging-Header.h";
@@ -792,7 +876,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = EduTestTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.candycloud.EduTestTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -809,7 +897,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = EduTestTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.candycloud.EduTestTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -825,7 +917,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = EduTestUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.candycloud.EduTestUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -841,7 +937,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = EduTestUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.candycloud.EduTestUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

@@ -13,6 +13,7 @@ target 'Citrus' do
   pod 'GoogleSignIn'
   pod 'FBSDKLoginKit'
   pod 'lottie-ios'
+  pod 'JSQMessagesViewController'
   
   target ‘CitrusTests' do
     inherit! :search_paths
