@@ -8,9 +8,8 @@
 import FirebaseFirestore
 import UIKit
 
-class ProjectVC: UIViewController, UIScrollViewDelegate{
+class ProjectVC: UIViewController{
     @IBOutlet var pageControl: UIPageControl!
-    @IBOutlet var scrollV: UIScrollView!
     
     @IBOutlet var titulo: UILabel!
     @IBOutlet var textContainer: UITextView!
@@ -28,7 +27,6 @@ class ProjectVC: UIViewController, UIScrollViewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        scrollV.delegate = self
         //==Gestures==
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(swipe:)))
         swipeLeft.direction = UISwipeGestureRecognizerDirection.left
@@ -47,18 +45,6 @@ class ProjectVC: UIViewController, UIScrollViewDelegate{
         
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if(self.lastContentOffset < scrollV.contentOffset.x){
-            self.lastContentOffset = scrollV.contentOffset.x
-            textContainer.text = "Derecha"
-            pageControl.currentPage = Int(pageControl.currentPage) + 1
-        }
-        if(self.lastContentOffset > scrollV.contentOffset.x){
-            self.lastContentOffset = scrollV.contentOffset.x
-            textContainer.text = "Derecha"
-            pageControl.currentPage = Int(pageControl.currentPage) + 1
-        }
-    }
     
     @objc func swipeAction(swipe:UISwipeGestureRecognizer){
         var currentp = Int(pageControl.currentPage)
