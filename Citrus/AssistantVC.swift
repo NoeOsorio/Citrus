@@ -104,7 +104,10 @@ extension AssistantVC {
         context = response.context // save context to continue conversation
         
         // synthesize and speak the response
-        textToSpeech.synthesize(text: text, accept: "audio/wav", failure: failure) { audio in
+        textToSpeech.synthesize(text: text,
+                                accept: "audio/wav",
+                                voice: "es-LA_SofiaVoice",
+                                failure: failure) { audio in
             self.audioPlayer = try? AVAudioPlayer(data: audio)
             self.audioPlayer?.prepareToPlay()
             self.audioPlayer?.play()
@@ -137,7 +140,9 @@ extension AssistantVC {
         var settings = RecognitionSettings(contentType: "audio/ogg;codecs=opus")
         var accumulator = SpeechRecognitionResultsAccumulator()
         settings.interimResults = true
-        speechToText.recognizeMicrophone(settings: settings, failure: failure) { results in
+        speechToText.recognizeMicrophone(settings: settings,
+                                         model: "es-ES_BroadbandModel",
+                                         failure: failure) { results in
             accumulator.add(results: results)
             self.inputToolbar.contentView.textView.text = accumulator.bestTranscript
             self.inputToolbar.toggleSendButtonEnabled()
