@@ -14,6 +14,7 @@ target 'Citrus' do
   pod 'FBSDKLoginKit'
   pod 'lottie-ios'
   pod 'JSQMessagesViewController'
+  pod 'Charts'
   
   target ‘CitrusTests' do
     inherit! :search_paths
