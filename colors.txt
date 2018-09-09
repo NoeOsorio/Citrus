@@ -1,2 +1,8 @@
 Blue: 184C72
 Orange: E97046
+New Orange: F15C29
+New blue: 23679B
+Yellow: F19B29
+
+Anothe Blue: 6398C0
+Anoche Darker Blue: 0F5082

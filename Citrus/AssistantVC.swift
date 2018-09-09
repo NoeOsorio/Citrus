@@ -161,8 +161,8 @@ extension AssistantVC {
     func setupInterface() {
         // bubbles
         let factory = JSQMessagesBubbleImageFactory()
-        let incomingColor = UIColor.jsq_messageBubbleLightGray()
-        let outgoingColor = UIColor.jsq_messageBubbleGreen()
+        let incomingColor = UIColor(red:0.95, green:0.61, blue:0.16, alpha:1.0)
+        let outgoingColor = UIColor(red:0.14, green:0.40, blue:0.61, alpha:1.0)
         incomingBubble = factory!.incomingMessagesBubbleImage(with: incomingColor)
         outgoingBubble = factory!.outgoingMessagesBubbleImage(with: outgoingColor)
         

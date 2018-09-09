@@ -10,6 +10,54 @@ import Foundation
 import FirebaseAuth
 
 var info:Info = Info()
+var userInfo = PersonalInfo("Noe", "Osorio")
+
+
+struct PersonalInfo {
+    
+    var name:String
+    var lastName:String
+    
+    //Personality
+    var personality:String
+    var subPersonality:[String] = []
+    var isFisrtTime:Bool?
+    var contextQuestion:Int = 0
+    
+    init(_ name:String, _ lastName:String){
+        self.name = name
+        self.lastName = lastName
+        self.personality = ""
+        self.setFisrtTime(true)
+    }
+    
+    mutating func addSubText(_ text:String, _ questNum:Int){
+        if (!self.subPersonality.isEmpty && self.subPersonality.count - 1 >= questNum){
+            self.subPersonality[questNum] = text
+        }
+        else{
+            self.subPersonality.append(text)
+        }
+    }
+    
+    mutating func getPersonality() -> String{
+        
+        for sub in self.subPersonality{
+            self.personality = self.personality + sub
+        }
+        return self.personality
+    }
+    
+    mutating func setFisrtTime(_ time:Bool){
+        self.isFisrtTime = time
+    }
+    
+    mutating func setContextQuestion(_ context:Int){
+        self.contextQuestion = context
+    }
+    
+    
+}
 
 struct Info {
     var materia:String
