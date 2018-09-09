@@ -12,7 +12,6 @@ import AVFoundation
 import AssistantV1
 import SpeechToTextV1
 import TextToSpeechV1
-import PersonalityInsightsV3
 
 class AssistantVC: JSQMessagesViewController {
     
@@ -23,17 +22,7 @@ class AssistantVC: JSQMessagesViewController {
     var assistant: Assistant!
     var speechToText: SpeechToText!
     var textToSpeech: TextToSpeech!
-    var personality: PersonalityInsights!
-    
-    var testText = """
-    Thus, we in the free world are moving steadily toward unity and cooperation, in the teeth of that old Bolshevik prophecy, and at the very time when extraordinary rumbles of discord can be heard across the Iron Curtain. It is not free societies which bear within them the seeds of inevitable disunity.
-    
-        X. OUR BALANCE OF PAYMENTS
-    
-        On one special problem, of great concern to our friends, and to us, I am proud to give the Congress an encouraging report. Our efforts to safeguard the dollar are progressing. In the 11 months preceding last February 1, we suffered a net loss of nearly $2 billion in gold. In the 11 months that followed, the loss was just over half a billion dollars. And our deficit in our basic transactions with the rest of the world--trade, defense, foreign aid, and capital, excluding volatile short-term flows--has been reduced from $2 billion for 1960 to about one-third that amount for 1961. Speculative fever against the dollar is ending--and confidence in the dollar has been restored.
-    
-    We did not--and could not--achieve these gains through import restrictions, troop withdrawals, exchange controls, dollar devaluation or
-    """
+   
     var audioPlayer: AVAudioPlayer?
     var workspace = Credentials.AssistantWorkspace
     var context: Context?
@@ -43,7 +32,6 @@ class AssistantVC: JSQMessagesViewController {
         setupInterface()
         setupSender()
         setupWatsonServices()
-        analyzePersonality()
         startAssistant()
     }
 }
@@ -67,13 +55,6 @@ extension AssistantVC {
             username: Credentials.TextToSpeechUsername,
             password: Credentials.TextToSpeechPassword
         )
-        personality = PersonalityInsights(
-            username: Credentials.PersonalityUsername,
-            password: Credentials.PersonalityPassword,
-            version: "2018-09-06"
-        )
-        
-        personality.serviceURL = "https://gateway.watsonplatform.net/personality-insights/api"
     }
     
     /// Present an error message
@@ -125,13 +106,6 @@ extension AssistantVC {
             self.messages.append(message)
             DispatchQueue.main.async { self.finishSendingMessage() }
         }
-    }
-    
-    func analyzePersonality() {
-        let failure = { (error: Error) in print (error) }
-        personality.profile(text: testText, failure: failure) { profile in
-                print(profile)
-            }
     }
     
     /// Start transcribing microphone audio

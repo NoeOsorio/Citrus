@@ -267,6 +267,31 @@
             </objects>
             <point key="canvasLocation" x="1133.5999999999999" y="463.71814092953525"/>
         </scene>
+        <!--PersonalityView-->
+        <scene sceneID="lGr-Ei-Beo">
+            <objects>
+                <viewController title="PersonalityView" id="9NV-gv-hnX" customClass="PersonalityVC" customModule="Citrus" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5ZV-Bw-O9m">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vr3-up-aao" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="16" y="20" width="343" height="627"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Jdv-hm-lxR"/>
+                    </view>
+                    <connections>
+                        <outlet property="bars" destination="Vr3-up-aao" id="Wwg-Jp-H6g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HtO-8d-NbJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4372" y="23.838080959520241"/>
+        </scene>
         <!--Perfil-->
         <scene sceneID="syp-mR-Fxr">
             <objects>

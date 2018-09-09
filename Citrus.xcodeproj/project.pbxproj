@@ -12,6 +12,7 @@
 		227926022140E36900164AB6 /* WatsonUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227926012140E36900164AB6 /* WatsonUser.swift */; };
 		22DD89E82140D0CE0072EAA9 /* AssistantVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DD89E72140D0CD0072EAA9 /* AssistantVC.swift */; };
 		22DD89FA2140D8C40072EAA9 /* AssistantV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DD89ED2140D8C20072EAA9 /* AssistantV1.framework */; };
+		22EA05662145CA9000EDB426 /* PersonalityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EA05652145CA8F00EDB426 /* PersonalityVC.swift */; };
 		22EA21132140DA23004F5557 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EA21092140DA21004F5557 /* Starscream.framework */; };
 		22EA21152140DA23004F5557 /* SpeechToTextV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EA210B2140DA22004F5557 /* SpeechToTextV1.framework */; };
 		22EA21162140DA23004F5557 /* RestKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EA210C2140DA22004F5557 /* RestKit.framework */; };
@@ -92,6 +93,7 @@
 		22DD89ED2140D8C20072EAA9 /* AssistantV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssistantV1.framework; path = Carthage/Build/iOS/AssistantV1.framework; sourceTree = "<group>"; };
 		22DD89F32140D8C30072EAA9 /* ConversationV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ConversationV1.framework; path = Carthage/Build/iOS/ConversationV1.framework; sourceTree = "<group>"; };
 		22DD89F42140D8C30072EAA9 /* DiscoveryV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DiscoveryV1.framework; path = Carthage/Build/iOS/DiscoveryV1.framework; sourceTree = "<group>"; };
+		22EA05652145CA8F00EDB426 /* PersonalityVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalityVC.swift; sourceTree = "<group>"; };
 		22EA21092140DA21004F5557 /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = Carthage/Build/iOS/Starscream.framework; sourceTree = "<group>"; };
 		22EA210B2140DA22004F5557 /* SpeechToTextV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpeechToTextV1.framework; path = Carthage/Build/iOS/SpeechToTextV1.framework; sourceTree = "<group>"; };
 		22EA210C2140DA22004F5557 /* RestKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RestKit.framework; path = Carthage/Build/iOS/RestKit.framework; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 				DC2C58102113C26B00224BED /* MenuClaseCell.swift */,
 				DC2C5812211536DF00224BED /* SearchVC.swift */,
 				DCCE049F21161DD1003C82CB /* NoticiasVC.swift */,
+				22EA05652145CA8F00EDB426 /* PersonalityVC.swift */,
 				22DD89E72140D0CD0072EAA9 /* AssistantVC.swift */,
 				227925FF2140E2CA00164AB6 /* Credentials.swift */,
 				227926012140E36900164AB6 /* WatsonUser.swift */,
@@ -625,6 +628,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC2C5813211536E000224BED /* SearchVC.swift in Sources */,
+				22EA05662145CA9000EDB426 /* PersonalityVC.swift in Sources */,
 				DCD803D020C7152500359C61 /* ViewController.swift in Sources */,
 				DC2298D121079EA5004D306B /* CuentoVC.swift in Sources */,
 				DC655DB22144E87E00CBA863 /* EntrevistaVC.swift in Sources */,
