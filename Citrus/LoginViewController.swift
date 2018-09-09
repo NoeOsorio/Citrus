@@ -45,8 +45,8 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, FBSDKLoginButt
         var handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
             if user != nil{
                 //MeasurementHelper.SendLoginEvent()
-                self.performSegue(withIdentifier: "logged", sender: self)
-                
+                //self.performSegue(withIdentifier: "logged", sender: self)
+                self.performSegue(withIdentifier: "entrevista", sender: self)
             }
         })
     }

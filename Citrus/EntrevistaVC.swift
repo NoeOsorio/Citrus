@@ -48,6 +48,11 @@ class EntrevistaVC: UIViewController {
         sig()
     }
     
+    @IBAction func ok(_ sender: Any) {
+        getAnswer()
+        performSegue(withIdentifier: "inicio", sender: self)
+    }
+    
     func setQuestion(){
         self.pregunta.text = preguntas[preguntaActual]
     }
