@@ -25,6 +25,7 @@ class EntrevistaVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideKeyboardWhenTappedAround()
         pregunta.layer.cornerRadius = 15
         respuesta.layer.cornerRadius = 15
         
@@ -94,3 +95,16 @@ class EntrevistaVC: UIViewController {
     }
     
 }
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
+
+

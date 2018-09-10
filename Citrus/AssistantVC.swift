@@ -26,6 +26,8 @@ class AssistantVC: JSQMessagesViewController {
     var audioPlayer: AVAudioPlayer?
     var workspace = Credentials.AssistantWorkspace
     var context: Context?
+    var intents: [RuntimeIntent] = []
+    var entities: [RuntimeEntity] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,6 +85,9 @@ extension AssistantVC {
     func presentResponse(_ response: MessageResponse) {
         let text = response.output.text.joined()
         context = response.context // save context to continue conversation
+        intents = response.intents
+        entities = response.entities
+        
         
         // synthesize and speak the response
         textToSpeech.synthesize(text: text,
@@ -106,6 +111,7 @@ extension AssistantVC {
             self.messages.append(message)
             DispatchQueue.main.async { self.finishSendingMessage() }
         }
+        
     }
     
     /// Start transcribing microphone audio
