@@ -48,7 +48,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 return
             }
             print("Ingreso exitosamente con Firebase", user.userID)
+            
         }
+       
     }
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
@@ -65,6 +67,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         //starts Facebook SDK
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let defaultInfoData = (UserDefaults.standard.value(forKey: "userID") as? String)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        var vc: UIViewController
+        
+        
+        if defaultInfoData == nil {
+            vc = storyboard.instantiateViewController(withIdentifier: "login")
+        }
+        else{
+            vc = storyboard.instantiateInitialViewController()!
+        }
+        
+        self.window?.rootViewController = vc
+        self.window?.makeKeyAndVisible()
         
         return true
     }

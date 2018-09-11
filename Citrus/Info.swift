@@ -5,30 +5,32 @@
 //  Created by Noe Osorio on 04/08/18.
 //  Copyright © 2018 Noe Osorio. All rights reserved.
 //
-
+import Firebase
+import FirebaseFirestore
 import Foundation
 import FirebaseAuth
 
+
 var info:Info = Info()
-var userInfo = PersonalInfo("Noe", "Osorio")
+var userInfo:PersonalInfo = PersonalInfo()
 
 
 struct PersonalInfo {
     
-    var name:String
-    var lastName:String
+    //Personal data
+    var username:String?
+    var user: User?
+    var userData: [String:Any]?
     
     //Personality
     var personality:String
     var subPersonality:[String] = []
-    var isFisrtTime:Bool?
     var contextQuestion:Int = 0
     
-    init(_ name:String, _ lastName:String){
-        self.name = name
-        self.lastName = lastName
+    
+    init(){
         self.personality = ""
-        self.setFisrtTime(true)
+        
     }
     
     mutating func addSubText(_ text:String, _ questNum:Int){
@@ -48,14 +50,26 @@ struct PersonalInfo {
         return self.personality
     }
     
-    mutating func setFisrtTime(_ time:Bool){
-        self.isFisrtTime = time
-    }
-    
     mutating func setContextQuestion(_ context:Int){
         self.contextQuestion = context
     }
-    
+    mutating func setUser(_ info:Info){
+        self.username = info.getUsername()
+        self.user = info.getUser()
+        self.userData = info.getUserData()
+    }
+    mutating func updatePersonality(){
+        let data:[String:Any] = ["personality":self.getPersonality()]
+        let db = Firestore.firestore()
+        db.collection("Users").document(data["userID"] as! String).updateData(data) { err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            } else {
+                print("Document successfully updated!")
+            }
+        }
+        UserDefaults.standard.set(userInfo, forKey: "userInfo")
+    }
     
 }
 
@@ -66,10 +80,10 @@ struct Info {
     var proyecto:String?
     var clase:String?
     var user:User?
+    var userData:[String:Any]?
     
     init(){
         self.materia = "Materia"
-
     }
     
     init(materia:String){
@@ -91,8 +105,18 @@ struct Info {
     mutating func setClase(clase:String){
         self.clase = clase
     }
+    mutating func setUserData(){
+        
+        self.userData = ["name": self.getUsername(),
+                         "userID": self.getUID(),
+                         "photoURL": self.getPhotoURL(),
+                         "email":self.getEmail()]
+       
+    }
     
-    mutating func getUser() -> User{
+    
+    
+    mutating func setUser(){
         var currentUser:User?
         
         currentUser = Auth.auth().currentUser
@@ -105,25 +129,58 @@ struct Info {
             currentUser = nil
         }
         self.user = currentUser
-        return currentUser!
     }
     
-    mutating func getEmail() -> String {
+    func getEmail() -> String {
         let email = user?.email
         print("User email: \(String(describing: email))")
         return email!
     }
     
-    mutating func getUID() -> String {
+    func getUID() -> String {
         let uid = user?.uid
         print("User UID: \(String(describing: uid))")
         return uid!
     }
     
-    mutating func getPhotoURL() -> URL {
-        let photoURL = user?.photoURL
+    func getUsername() -> String {
+        let username = user?.displayName
+        print("User UID: \(String(describing: username))")
+        return username!
+    }
+    
+    func getPhotoURL() -> String {
+        let photoURL = user?.photoURL?.absoluteString
         print("User photo URL: \(String(describing: photoURL))")
         return photoURL!
+    }
+    
+    func getUserData() -> [String:Any]{
+        return self.userData!
+    }
+    
+    func getUser() -> User{
+        return self.user!
+    }
+    
+    mutating func uploadUserData(){
+        let data = self.getUserData()
+        let db = Firestore.firestore()
+        db.collection("Users").document(data["userID"] as! String).setData(data) { err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            } else {
+                print("Document successfully written!")
+            }
+        }
+        
+    }
+    
+    func saveDefault(){
+        UserDefaults.standard.set(getUsername(), forKey: "username")
+        UserDefaults.standard.set(getUID(), forKey: "userID")
+        UserDefaults.standard.set(getPhotoURL(), forKey: "photoURL")
+        UserDefaults.standard.set(getEmail(), forKey: "email")
     }
     
 }

@@ -28,15 +28,19 @@ class EntrevistaVC: UIViewController {
         hideKeyboardWhenTappedAround()
         pregunta.layer.cornerRadius = 15
         respuesta.layer.cornerRadius = 15
-        
-        
-        
+        let defaultInfoData = (UserDefaults.standard.value(forKey: "info") as? Info)
+        if defaultInfoData == nil{
+            info.setUser()
+            info.setUserData()
+            userInfo.setUser(info)
+            info.uploadUserData()
+            info.saveDefault()
+        }
         preguntaActual = userInfo.contextQuestion
         if(preguntaActual == 0){
             atrasBtn.isHidden = true
         }
         setQuestion()
-        
     }
 
     @IBAction func cancelar(_ sender: Any) {
@@ -51,6 +55,7 @@ class EntrevistaVC: UIViewController {
     
     @IBAction func ok(_ sender: Any) {
         getAnswer()
+        userInfo.updatePersonality()
         performSegue(withIdentifier: "inicio", sender: self)
     }
     
@@ -73,7 +78,7 @@ class EntrevistaVC: UIViewController {
         
         if(preguntaActual >= preguntas.count - 1){
             print(userInfo.getPersonality())
-            userInfo.setFisrtTime(false)
+            userInfo.updatePersonality()
             performSegue(withIdentifier: "inicio", sender: self)
             
         }
@@ -93,6 +98,7 @@ class EntrevistaVC: UIViewController {
         }
         
     }
+    
     
 }
 extension UIViewController {

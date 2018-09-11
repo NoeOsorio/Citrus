@@ -46,6 +46,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, FBSDKLoginButt
             if user != nil{
                 //MeasurementHelper.SendLoginEvent()
                 //self.performSegue(withIdentifier: "logged", sender: self)
+                
                 self.performSegue(withIdentifier: "entrevista", sender: self)
             }
         })
@@ -62,7 +63,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, FBSDKLoginButt
         let credential =  FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
         Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
             if let error = error {
-                print("Failed to log in with Facebook /(error)")
+                print("Failed to log in with Facebook \(error)")
             }
             print("Ingreso exitosamente a Firebase con Facebook")
         }
@@ -76,7 +77,9 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, FBSDKLoginButt
     @IBAction func didTouchLoginButton(_ sender: UIButton) {
             Auth.auth().signIn(withEmail: emailField.text!, password: passwordField.text!, completion: { (user, error) in
                 if user != nil {
-                    self.performSegue(withIdentifier: "logged", sender: self)
+                    //self.performSegue(withIdentifier: "logged", sender: self)
+                    
+                    self.performSegue(withIdentifier: "entrevista", sender: self)
                 }
                     
                 else {
@@ -89,3 +92,5 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, FBSDKLoginButt
         self.performSegue(withIdentifier: "register", sender: self)
     }
 }
+
+
