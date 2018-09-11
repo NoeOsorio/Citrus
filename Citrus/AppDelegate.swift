@@ -69,6 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
+        
         let defaultInfoData = (UserDefaults.standard.value(forKey: "userID") as? String)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         var vc: UIViewController
@@ -76,6 +77,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         if defaultInfoData == nil {
             vc = storyboard.instantiateViewController(withIdentifier: "login")
+            UserDefaults.standard.set(false, forKey: "mute")
         }
         else{
             vc = storyboard.instantiateInitialViewController()!

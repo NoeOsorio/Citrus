@@ -88,16 +88,19 @@ extension AssistantVC {
         intents = response.intents
         entities = response.entities
         
-        
-        // synthesize and speak the response
-        textToSpeech.synthesize(text: text,
-                                accept: "audio/wav",
-                                voice: "es-LA_SofiaVoice",
-                                failure: failure) { audio in
-            self.audioPlayer = try? AVAudioPlayer(data: audio)
-            self.audioPlayer?.prepareToPlay()
-            self.audioPlayer?.play()
+        if !((UserDefaults.standard.value(forKey: "mute") as? Bool)!){
+            // synthesize and speak the response
+            textToSpeech.synthesize(text: text,
+                                    accept: "audio/wav",
+                                    voice: "es-LA_SofiaVoice",
+                                    failure: failure) { audio in
+                                        self.audioPlayer = try? AVAudioPlayer(data: audio)
+                                        self.audioPlayer?.prepareToPlay()
+                                        self.audioPlayer?.play()
+            }
         }
+        
+        
         
         // create message
         let message = JSQMessage(

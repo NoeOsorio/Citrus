@@ -41,6 +41,7 @@
 		DC5AA101211F9AA200CAEDAB /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5AA100211F9AA200CAEDAB /* Gradient.swift */; };
 		DC655DB22144E87E00CBA863 /* EntrevistaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC655DB12144E87E00CBA863 /* EntrevistaVC.swift */; };
 		DC6BEE0220CB5A9E00C9B0B4 /* ProgressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6BEE0120CB5A9E00C9B0B4 /* ProgressVC.swift */; };
+		DC6F3420214818E5007797BD /* WatsonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6F341F214818E4007797BD /* WatsonVC.swift */; };
 		DCA53BBF20D99FB300E25A2D /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53BBE20D99FB300E25A2D /* Subject.swift */; };
 		DCA53BC120D9DD4D00E25A2D /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53BC020D9DD4D00E25A2D /* HomeVC.swift */; };
 		DCA53BC320D9DEB500E25A2D /* CategoriaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53BC220D9DEB500E25A2D /* CategoriaCell.swift */; };
@@ -131,6 +132,7 @@
 		DC5AA100211F9AA200CAEDAB /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
 		DC655DB12144E87E00CBA863 /* EntrevistaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntrevistaVC.swift; sourceTree = "<group>"; };
 		DC6BEE0120CB5A9E00C9B0B4 /* ProgressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressVC.swift; sourceTree = "<group>"; };
+		DC6F341F214818E4007797BD /* WatsonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatsonVC.swift; sourceTree = "<group>"; };
 		DCA53BBE20D99FB300E25A2D /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
 		DCA53BC020D9DD4D00E25A2D /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		DCA53BC220D9DEB500E25A2D /* CategoriaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriaCell.swift; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 				227925FF2140E2CA00164AB6 /* Credentials.swift */,
 				227926012140E36900164AB6 /* WatsonUser.swift */,
 				DC655DB12144E87E00CBA863 /* EntrevistaVC.swift */,
+				DC6F341F214818E4007797BD /* WatsonVC.swift */,
 			);
 			path = Citrus;
 			sourceTree = "<group>";
@@ -628,6 +631,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC2C5813211536E000224BED /* SearchVC.swift in Sources */,
+				DC6F3420214818E5007797BD /* WatsonVC.swift in Sources */,
 				22EA05662145CA9000EDB426 /* PersonalityVC.swift in Sources */,
 				DCD803D020C7152500359C61 /* ViewController.swift in Sources */,
 				DC2298D121079EA5004D306B /* CuentoVC.swift in Sources */,
