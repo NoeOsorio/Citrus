@@ -31,7 +31,7 @@ class PersonalityVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupWatsonServices()
-        //analyzePersonality()
+        analyzePersonality()
         getRecommendations()
     }
 
@@ -64,8 +64,8 @@ class PersonalityVC: UIViewController {
         //"111d9266-b5a7-487a-9fca-8293b10243e7", collectionID: "51e662ec-9ae3-41f1-ad37-fce07fb0df10"
         discovery.query(
             environmentID: "111d9266-b5a7-487a-9fca-8293b10243e7",
-            collectionID: "51e662ec-9ae3-41f1-ad37-fce07fb0df10",
-            naturalLanguageQuery: "Español",
+            collectionID: "5221bd92-9179-45c9-9b64-25c30f5e7277",
+            naturalLanguageQuery: "Cortés",
             passages: true,
             failure: { (error) in
                 print(error)
