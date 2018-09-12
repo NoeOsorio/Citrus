@@ -261,7 +261,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gQ0-yZ-1Es"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Watson" id="Jvx-wo-wU8"/>
+                    <tabBarItem key="tabBarItem" title="Watson" image="science" id="Jvx-wo-wU8">
+                        <inset key="imageInsets" minX="0.0" minY="51" maxX="0.0" maxY="51"/>
+                        <inset key="landscapeImageInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
+                        <inset key="largeContentSizeImageInsets" minX="0.0" minY="24" maxX="0.0" maxY="0.0"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="muteBtn" destination="PQz-nO-4Is" id="TpS-Xl-lnt"/>
                     </connections>
@@ -516,7 +520,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YQM-Po-i6o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1522.4000000000001" y="-445.72713643178412"/>
+            <point key="canvasLocation" x="-1508" y="-501"/>
         </scene>
         <!--Cursos-->
         <scene sceneID="DHA-wa-YvF">
@@ -1882,6 +1886,7 @@
         <image name="like" width="64" height="64"/>
         <image name="likebw" width="64" height="64"/>
         <image name="orange" width="256" height="256"/>
+        <image name="science" width="32" height="32"/>
         <image name="speaker-5" width="512" height="512"/>
         <image name="speaker-8" width="512" height="512"/>
         <image name="student" width="512" height="512"/>
