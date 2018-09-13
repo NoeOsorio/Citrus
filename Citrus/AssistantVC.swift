@@ -128,37 +128,37 @@ extension AssistantVC {
     
     func getRecommendations(materia: String) {
         var queryList: [String] = ["text:\"\(materia)\""]
-        
+        self.passages.removeAll()
         for category in personalityProfile.consumptionPreferences! {
             for preference in category.consumptionPreferences {
                 print("\(preference.consumptionPreferenceID):\(preference.score)")
                 
                 if(preference.consumptionPreferenceID == "consumption_preferences_movie_historical" && preference.score == 1.0 && materia == "Historia") {
-                    queryList.append("text:\"\(materia)\",text:\"video\",text:\"historia\"")
+                    queryList.append("(text:\"\(materia)\",text:\"video\",text:\"historia\"")
                 }
                 
                 if(preference.consumptionPreferenceID == "consumption_preferences_movie_documentary" && preference.score == 1.0) {
-                    queryList.append("text:\"\(materia)\",text:\"documental\",text:\"video\"")
+                    queryList.append("(text:\"\(materia)\"|(text:\"documental\"|text:\"video\"))")
                 }
                 
                 if(preference.consumptionPreferenceID == "consumption_preferences_read_frequency" && preference.score == 1.0) {
-                    queryList.append("text:\"\(materia)\",text:\"no ficcion\",text:\"articulo\"")
+                    queryList.append("(text:\"\(materia)\"|(text:\"no ficcion\"|text:\"articulo\"))")
                 }
                 
                 if(preference.consumptionPreferenceID == "consumption_preferences_non_fiction" && preference.score == 1.0) {
-                    queryList.append("text:\"\(materia)\",text:\"no ficcion\",text:\"articulo\"")
+                    queryList.append("(text:\"\(materia)\"|(text:\"no ficcion\"|text:\"articulo\"))")
                 }
                 
                 if(preference.consumptionPreferenceID == "consumption_preferences_financial_investing" && preference.score == 1.0) {
-                    queryList.append("text:\"\(materia)\",text:\"finanzas\",text:\"curso\"")
+                    queryList.append("(text:\"\(materia)\"|(text:\"finanzas\"|text:\"curso\"))")
                 }
                 
                 if(preference.consumptionPreferenceID == "consumption_preferences_books_autobiographies" && preference.score == 1.0) {
-                    queryList.append("text:\"\(materia)\",text:\"autobiografia\",text:\"articulo\"")
+                    queryList.append("(text:\"\(materia)\"|(text:\"autobiografia\"|text:\"articulo\"))")
                 }
                 
                 if(preference.consumptionPreferenceID == "consumption_preferences_start_business" && preference.score == 1.0) {
-                    queryList.append("text:\"\(materia)\",text:\"negocios\"")
+                    queryList.append("(text:\"\(materia)\"|(text:\"negocios\"))")
                 }
             }
         }
