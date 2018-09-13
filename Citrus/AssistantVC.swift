@@ -35,7 +35,7 @@ class AssistantVC: JSQMessagesViewController {
     var personality: PersonalityInsights!
     var personalityProfile: Profile!
     var discovery: Discovery!
-    
+    var band: Int = 0
     var testText = """
     Thus, we in the free world are moving steadily toward unity and cooperation, in the teeth of that old Bolshevik prophecy, and at the very time when extraordinary rumbles of discord can be heard across the Iron Curtain. It is not free societies which bear within them the seeds of inevitable disunity.
     
@@ -112,15 +112,21 @@ extension AssistantVC {
     }
     
     func analyzePersonality() {
+        
         let failure = { (error: Error) in print (error) }
         personality.profile(text: testText, contentLanguage: "en", acceptLanguage: "es", consumptionPreferences: true, failure: failure) { profile in
             self.personalityProfile = profile
         }
     }
     
+    func showResults(results: [QueryPassages]) {
+        print("This is the showResults function with \(passages)")
+        self.passages = results
+        band = 1
+    }
+    
     func getRecommendations(materia: String) {
         var queryList: [String] = ["text:\"\(materia)\""]
-        var passages: [QueryPassages] = []
         
         for category in personalityProfile.consumptionPreferences! {
             for preference in category.consumptionPreferences {
@@ -165,7 +171,7 @@ extension AssistantVC {
             failure: { (error) in
                 print(error)
         }) { (queryResponse) in
-            self.passages = queryResponse.passages!
+            self.showResults(results: queryResponse.passages!)
         }
     }
     /// Present a conversation reply and speak it to the user
@@ -182,21 +188,25 @@ extension AssistantVC {
         
         if(response.intents != nil || response.entities != nil) {
             for intent in response.intents {
-                if(intent.intent == "aprender" || intent.intent == "Aprender") {
+                if(intent.intent == "examen" || intent.intent == "Aprender") {
                     print("\nEl usuario tiene intención de aprender\n")
                     print("\nPersonalidad: \(info.getPersonality())")
+
                     for entity in response.entities {
-                        if(entity.entity == "examen") {
+                        if(entity.entity == "materia") {
                             getRecommendations(materia: entity.value)
                         }
                         
                     }
                 }
-                else if(intent.intent == "recomendacion" || intent.intent == "Recomendacion") {
+                else if(intent.intent == "aprender" || intent.intent == "Recomendacion") {
                     print("\nEl usuario quiere una recomendación\n")
                     print("\nPersonalidad: \(info.getPersonality())")
+                    
                     for entity in response.entities {
-                        print("Entity.entity \(entity.entity)")
+                        if(entity.entity == "materia") {
+                            getRecommendations(materia: entity.value)
+                        }
                     }
                 }
             }
@@ -216,12 +226,12 @@ extension AssistantVC {
         
         // create message
         if(self.passages != nil) {
-            print(self.passages)
-            //let Qresult = results[Int(arc4random_uniform(UInt32(results.count)))]
+            print("\n In message with \(self.passages)\n")
+            let Qresult = passages[Int(arc4random_uniform(UInt32(passages.count)))]
             let message = JSQMessage(
                 senderId: WatsonUser.watson.rawValue,
                 displayName: WatsonUser.getName(WatsonUser.watson),
-                text: text//Qresult.passageText
+                text: Qresult.passageText
             )
             
             // add message to chat window
@@ -230,18 +240,17 @@ extension AssistantVC {
                 DispatchQueue.main.async { self.finishSendingMessage() }
             }
         }
-        else {
-            let message = JSQMessage(
-            senderId: WatsonUser.watson.rawValue,
-            displayName: WatsonUser.getName(WatsonUser.watson),
-            text: text
-            )
+        
+        let message = JSQMessage(
+        senderId: WatsonUser.watson.rawValue,
+        displayName: WatsonUser.getName(WatsonUser.watson),
+        text: text
+        )
             
-            // add message to chat window
-            if let message = message {
-                self.messages.append(message)
-                DispatchQueue.main.async { self.finishSendingMessage() }
-            }
+        // add message to chat window
+        if let message = message {
+            self.messages.append(message)
+            DispatchQueue.main.async { self.finishSendingMessage() }
         }
     }
     
