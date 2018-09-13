@@ -31,7 +31,9 @@ class AssistantVC: JSQMessagesViewController {
     var intents: [RuntimeIntent] = []
     var entities: [RuntimeEntity] = []
     
+    var passages: [QueryPassages] = []
     var personality: PersonalityInsights!
+    var personalityProfile: Profile!
     var discovery: Discovery!
     
     var testText = """
@@ -109,32 +111,65 @@ extension AssistantVC {
     }
     
     func analyzePersonality() {
-        //Debe de ir y ser llamada en Info.swift
         let failure = { (error: Error) in print (error) }
         personality.profile(text: testText, contentLanguage: "en", acceptLanguage: "es", consumptionPreferences: true, failure: failure) { profile in
+            self.personalityProfile = profile
         }
     }
     
     func getRecommendations(materia: String) {
-        //let failure = { (error: Error) in print (failure) }
-        //"111d9266-b5a7-487a-9fca-8293b10243e7", collectionID: "51e662ec-9ae3-41f1-ad37-fce07fb0df10"
-        print("Obteniendo recomendaciones en \(materia)")
+        var queryList: [String] = ["text:\"\(materia)\""]
+        var passages: [QueryPassages] = []
+        
+        for category in personalityProfile.consumptionPreferences! {
+            for preference in category.consumptionPreferences {
+                print("\(preference.consumptionPreferenceID):\(preference.score)")
+                
+                if(preference.consumptionPreferenceID == "consumption_preferences_movie_historical" && preference.score == 1.0) {
+                    queryList.append("text:\"\(materia)\",text:\"video\",text:\"historia\"")
+                }
+                
+                if(preference.consumptionPreferenceID == "consumption_preferences_movie_documentary" && preference.score == 1.0) {
+                    queryList.append("text:\"\(materia)\",text:\"documental\",text:\"video\"")
+                }
+                
+                if(preference.consumptionPreferenceID == "consumption_preferences_read_frequency" && preference.score == 1.0) {
+                    queryList.append("text:\"\(materia)\",text:\"no ficcion\",text:\"articulo\"")
+                }
+                
+                if(preference.consumptionPreferenceID == "consumption_preferences_non_fiction" && preference.score == 1.0) {
+                    queryList.append("text:\"\(materia)\",text:\"no ficcion\",text:\"articulo\"")
+                }
+                
+                if(preference.consumptionPreferenceID == "consumption_preferences_financial_investing" && preference.score == 1.0) {
+                    queryList.append("text:\"\(materia)\",text:\"inversiones\",text:\"articulo\"")
+                }
+                
+                if(preference.consumptionPreferenceID == "consumption_preferences_books_autobiographies" && preference.score == 1.0) {
+                    queryList.append("text:\"\(materia)\",text:\"autobiografia\",text:\"articulo\"")
+                }
+                
+                if(preference.consumptionPreferenceID == "consumption_preferences_start_business" && preference.score == 1.0) {
+                    queryList.append("text:\"\(materia)\",text:\"negocios\"")
+                }
+            }
+        }
+        let Preferencequery = queryList[Int(arc4random_uniform(UInt32(queryList.count)))]
+        print("\nObteniendo recomendaciones con query: \(Preferencequery)\n")
         discovery.query(
             environmentID: "111d9266-b5a7-487a-9fca-8293b10243e7",
             collectionID: "5221bd92-9179-45c9-9b64-25c30f5e7277",
-            naturalLanguageQuery: materia,
+            query: Preferencequery,
             passages: true,
             failure: { (error) in
                 print(error)
         }) { (queryResponse) in
-            print("\nResults:\n")
-            print(queryResponse.results)
-            print("\nPassages:\n")
-            print(queryResponse.passages)
+            self.passages = queryResponse.passages!
         }
     }
     /// Present a conversation reply and speak it to the user
     func presentResponse(_ response: MessageResponse) {
+        
         let text = response.output.text.joined()
         context = response.context // save context to continue conversation
         intents = response.intents
@@ -178,21 +213,35 @@ extension AssistantVC {
             }
         }
         
-        
-        
         // create message
-        let message = JSQMessage(
+        if(self.passages != nil) {
+            print(self.passages)
+            //let Qresult = results[Int(arc4random_uniform(UInt32(results.count)))]
+            let message = JSQMessage(
+                senderId: WatsonUser.watson.rawValue,
+                displayName: WatsonUser.getName(WatsonUser.watson),
+                text: text//Qresult.passageText
+            )
+            
+            // add message to chat window
+            if let message = message {
+                self.messages.append(message)
+                DispatchQueue.main.async { self.finishSendingMessage() }
+            }
+        }
+        else {
+            let message = JSQMessage(
             senderId: WatsonUser.watson.rawValue,
             displayName: WatsonUser.getName(WatsonUser.watson),
             text: text
-        )
-        
-        // add message to chat window
-        if let message = message {
-            self.messages.append(message)
-            DispatchQueue.main.async { self.finishSendingMessage() }
+            )
+            
+            // add message to chat window
+            if let message = message {
+                self.messages.append(message)
+                DispatchQueue.main.async { self.finishSendingMessage() }
+            }
         }
-        
     }
     
     /// Start transcribing microphone audio
