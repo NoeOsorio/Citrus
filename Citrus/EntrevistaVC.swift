@@ -15,7 +15,7 @@ class EntrevistaVC: UIViewController {
     @IBOutlet var atrasBtn: UIButton!
     @IBOutlet var siguienteBtn: UIButton!
     
-    var userInfoBuffer = userInfo
+    var infoBuffer = info
     
     var preguntas: [String] = ["¿Qué edad tienes?",
                                "¿Cual es tu materia favorita? \n Explica la razón",
@@ -28,15 +28,16 @@ class EntrevistaVC: UIViewController {
         hideKeyboardWhenTappedAround()
         pregunta.layer.cornerRadius = 15
         respuesta.layer.cornerRadius = 15
-        let defaultInfoData = (UserDefaults.standard.value(forKey: "info") as? Info)
+        let defaultInfoData = (UserDefaults.standard.value(forKey: "userID") as? String)
         if defaultInfoData == nil{
             info.setUser()
             info.setUserData()
+            info.setPersonality("")
             userInfo.setUser(info)
             info.uploadUserData()
             info.saveDefault()
         }
-        preguntaActual = userInfo.contextQuestion
+        preguntaActual = info.contextQuestion
         if(preguntaActual == 0){
             atrasBtn.isHidden = true
         }
@@ -44,6 +45,7 @@ class EntrevistaVC: UIViewController {
     }
 
     @IBAction func cancelar(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
         
     }
     @IBAction func atras(_ sender: Any) {
@@ -55,8 +57,12 @@ class EntrevistaVC: UIViewController {
     
     @IBAction func ok(_ sender: Any) {
         getAnswer()
-        userInfo.updatePersonality()
+        info.setPersonality()
+        info.updatePersonality()
         performSegue(withIdentifier: "inicio", sender: self)
+    }
+    @IBAction func Avanzado(_ sender: Any) {
+        performSegue(withIdentifier: "avanzado", sender: self)
     }
     
     func setQuestion(){
@@ -65,10 +71,10 @@ class EntrevistaVC: UIViewController {
     
     
     func getAnswer(){
-        userInfo.setContextQuestion(self.preguntaActual)
+        info.setContextQuestion(self.preguntaActual)
         let txt = self.respuesta.text!
-        userInfo.addSubText(txt, preguntaActual)
-        print(userInfo.subPersonality[preguntaActual])
+        info.addSubText(txt, preguntaActual)
+        print(info.subPersonality[preguntaActual])
         
         self.respuesta.text.removeAll()
     }
@@ -77,8 +83,9 @@ class EntrevistaVC: UIViewController {
         getAnswer()
         
         if(preguntaActual >= preguntas.count - 1){
-            print(userInfo.getPersonality())
-            userInfo.updatePersonality()
+            print(info.getPersonality())
+            info.setPersonality()
+            info.updatePersonality()
             performSegue(withIdentifier: "inicio", sender: self)
             
         }

@@ -23,14 +23,12 @@ struct PersonalInfo {
     var userData: [String:Any]?
     
     //Personality
-    var personality:String
+    var personality:String?
     var subPersonality:[String] = []
     var contextQuestion:Int = 0
     
     
     init(){
-        self.personality = ""
-        
     }
     
     mutating func addSubText(_ text:String, _ questNum:Int){
@@ -44,10 +42,10 @@ struct PersonalInfo {
     
     mutating func getPersonality() -> String{
         
-        for sub in self.subPersonality{
-            self.personality = self.personality + sub
+        if self.personality == nil{
+            setPersonality()
         }
-        return self.personality
+        return self.personality!
     }
     
     mutating func setContextQuestion(_ context:Int){
@@ -58,8 +56,19 @@ struct PersonalInfo {
         self.user = info.getUser()
         self.userData = info.getUserData()
     }
+    
+    mutating func setPersonality(){
+        for sub in self.subPersonality{
+            self.personality = self.personality! + sub
+        }
+    }
+    
+    mutating func setPersonality(_ txt:String){
+        self.personality = txt
+    }
+    
     mutating func updatePersonality(){
-        let data:[String:Any] = ["personality":self.getPersonality()]
+        let data:[String:Any] = ["personality": self.getPersonality()]
         let db = Firestore.firestore()
         db.collection("Users").document(data["userID"] as! String).updateData(data) { err in
             if let err = err {
@@ -70,17 +79,36 @@ struct PersonalInfo {
         }
         UserDefaults.standard.set(userInfo, forKey: "userInfo")
     }
+    mutating func updatePersonalityString(_ txt:String){
+        if self.personality != nil{
+            self.personality = self.personality! + txt
+        }
+        else{
+            setPersonality(txt)
+        }
+    }
     
 }
 
 struct Info {
+    //Materias
     var materia:String
     var tipo:String?
     var curso:String?
     var proyecto:String?
     var clase:String?
+    
+    //User Info
     var user:User?
     var userData:[String:Any]?
+    
+    //Personality
+    var personality:String?
+    var contextQuestion:Int = 0
+    var subPersonality:[String] = []
+
+    
+    //Init
     
     init(){
         self.materia = "Materia"
@@ -89,6 +117,8 @@ struct Info {
     init(materia:String){
         self.materia = materia
     }
+    
+    //Setter
     
     mutating func setMateria(materia:String){
         self.materia = materia
@@ -105,12 +135,35 @@ struct Info {
     mutating func setClase(clase:String){
         self.clase = clase
     }
+    mutating func setContextQuestion(_ context:Int){
+        self.contextQuestion = context
+    }
+    mutating func addSubText(_ text:String, _ questNum:Int){
+        if (!self.subPersonality.isEmpty && self.subPersonality.count - 1 >= questNum){
+            self.subPersonality[questNum] = text
+        }
+        else{
+            self.subPersonality.append(text)
+        }
+    }
+    mutating func setPersonality(){
+        for sub in self.subPersonality{
+            self.personality = self.personality! + sub
+        }
+    }
+    
+    mutating func setPersonality(_ txt:String){
+        self.personality = txt
+    }
+    
     mutating func setUserData(){
         
         self.userData = ["name": self.getUsername(),
                          "userID": self.getUID(),
                          "photoURL": self.getPhotoURL(),
-                         "email":self.getEmail()]
+                         "email":self.getEmail(),
+                         "personality": self.getPersonality,
+                         "contextQuestion": self.contextQuestion]
        
     }
     
@@ -130,6 +183,8 @@ struct Info {
         }
         self.user = currentUser
     }
+    
+    //Getter
     
     func getEmail() -> String {
         let email = user?.email
@@ -163,6 +218,54 @@ struct Info {
         return self.user!
     }
     
+    func getContextQuestion() -> Int{
+        return self.contextQuestion
+    }
+    func getPersonality() -> String{
+        return self.personality!
+    }
+    
+    //Update Local
+    
+    mutating func updatePersonalityString(_ txt:String){
+        if self.personality != nil{
+            self.personality = self.personality! + txt
+        }
+        else{
+            setPersonality(txt)
+        }
+    }
+    
+    //Update DB
+    
+    mutating func update(_ data:[String:Any]?){
+        if data == nil{
+            return
+        }
+        let defaultData = UserDefaults.standard.value(forKey: "userID") as! String
+        let db = Firestore.firestore()
+        let settings = db.settings
+        settings.areTimestampsInSnapshotsEnabled = true
+        db.settings = settings
+        
+        db.collection("Users").document(defaultData).updateData(data!) { err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            } else {
+                print("Document successfully updated!")
+            }
+        }
+        saveDefault()
+    }
+    
+    mutating func updatePersonality(){
+        let data:[String:Any] = ["personality": self.personality!]
+        update(data)
+    }
+    
+    
+    //Upload to DB
+    
     mutating func uploadUserData(){
         let data = self.getUserData()
         let db = Firestore.firestore()
@@ -176,11 +279,16 @@ struct Info {
         
     }
     
-    func saveDefault(){
+    mutating func saveDefault(){
+        self.setUser()
         UserDefaults.standard.set(getUsername(), forKey: "username")
         UserDefaults.standard.set(getUID(), forKey: "userID")
         UserDefaults.standard.set(getPhotoURL(), forKey: "photoURL")
         UserDefaults.standard.set(getEmail(), forKey: "email")
+        UserDefaults.standard.set(getPersonality(), forKey: "personality")
+        UserDefaults.standard.set(getContextQuestion(), forKey: "contextQuestion")
     }
+    
+    
     
 }

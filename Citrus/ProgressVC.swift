@@ -49,6 +49,9 @@ class ProgressVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    @IBAction func personalidad(_ sender: Any) {
+        performSegue(withIdentifier: "personalidad", sender: self)
+    }
     
 
 

@@ -24,6 +24,7 @@
 		5C5B2A4D20CC4FE600941D08 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5B2A4C20CC4FE600941D08 /* QuestionViewController.swift */; };
 		AE6C0625BEC539A423D738B2 /* Pods_Citrus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B699E9CD8218594D00D8D523 /* Pods_Citrus.framework */; };
 		C0F08403C1B5EA2CDA9B278D /* Pods_EduTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D69A6492AC2A04D12C09E69 /* Pods_EduTestUITests.framework */; };
+		DC1508302149D30200387D1A /* PersonalidadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC15082F2149D30200387D1A /* PersonalidadVC.swift */; };
 		DC2298D021079EA5004D306B /* TipVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2298CE21079EA2004D306B /* TipVC.swift */; };
 		DC2298D121079EA5004D306B /* CuentoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2298CF21079EA4004D306B /* CuentoVC.swift */; };
 		DC2C580A21137B1A00224BED /* biking_is_cool.json in Resources */ = {isa = PBXBuildFile; fileRef = DC2C580621137B1000224BED /* biking_is_cool.json */; };
@@ -113,6 +114,7 @@
 		B699E9CD8218594D00D8D523 /* Pods_Citrus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Citrus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D91D6B75330847951174D220 /* Pods-CitrusUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CitrusUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CitrusUITests/Pods-CitrusUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DA7D05E31346162F714332FD /* Pods-EduTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduTestUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EduTestUITests/Pods-EduTestUITests.release.xcconfig"; sourceTree = "<group>"; };
+		DC15082F2149D30200387D1A /* PersonalidadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalidadVC.swift; sourceTree = "<group>"; };
 		DC2298CE21079EA2004D306B /* TipVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipVC.swift; sourceTree = "<group>"; };
 		DC2298CF21079EA4004D306B /* CuentoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CuentoVC.swift; sourceTree = "<group>"; };
 		DC2C580621137B1000224BED /* biking_is_cool.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = biking_is_cool.json; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 				227926012140E36900164AB6 /* WatsonUser.swift */,
 				DC655DB12144E87E00CBA863 /* EntrevistaVC.swift */,
 				DC6F341F214818E4007797BD /* WatsonVC.swift */,
+				DC15082F2149D30200387D1A /* PersonalidadVC.swift */,
 			);
 			path = Citrus;
 			sourceTree = "<group>";
@@ -644,6 +647,7 @@
 				DCA53BC520D9DED100E25A2D /* HotCell.swift in Sources */,
 				DC6BEE0220CB5A9E00C9B0B4 /* ProgressVC.swift in Sources */,
 				DC34573A20CA0973007DB7A2 /* LectureCell.swift in Sources */,
+				DC1508302149D30200387D1A /* PersonalidadVC.swift in Sources */,
 				DCCE04A021161DD1003C82CB /* NoticiasVC.swift in Sources */,
 				DCCF492920C863E6003FADC4 /* MenuCell.swift in Sources */,
 				DC2C580F2113BF2D00224BED /* MenuClasesVC.swift in Sources */,
