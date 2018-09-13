@@ -52,6 +52,7 @@ class AssistantVC: JSQMessagesViewController {
         setupSender()
         setupWatsonServices()
         startAssistant()
+        info.getDefault()
     }
 }
 
@@ -183,7 +184,7 @@ extension AssistantVC {
             for intent in response.intents {
                 if(intent.intent == "aprender" || intent.intent == "Aprender") {
                     print("\nEl usuario tiene intención de aprender\n")
-                    print("\nPersonalidad: \(userInfo.getPersonality())")
+                    print("\nPersonalidad: \(info.getPersonality())")
                     for entity in response.entities {
                         if(entity.entity == "examen") {
                             getRecommendations(materia: entity.value)
@@ -193,7 +194,7 @@ extension AssistantVC {
                 }
                 else if(intent.intent == "recomendacion" || intent.intent == "Recomendacion") {
                     print("\nEl usuario quiere una recomendación\n")
-                    print("\nPersonalidad: \(userInfo.getPersonality())")
+                    print("\nPersonalidad: \(info.getPersonality())")
                     for entity in response.entities {
                         print("Entity.entity \(entity.entity)")
                     }
