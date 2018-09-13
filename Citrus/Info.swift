@@ -289,11 +289,11 @@ struct Info {
         UserDefaults.standard.set(getContextQuestion(), forKey: "contextQuestion")
     }
     
-    mutating func getDefault(){
+    /*mutating func getDefault(){
         self.setUser()
         self.setPersonality(UserDefaults.standard.value(forKey: "personality") as! String)
         self.setContextQuestion(UserDefaults.standard.value(forKey: "contextQuestion") as! Int)
-    }
+    }*/
     
     
     

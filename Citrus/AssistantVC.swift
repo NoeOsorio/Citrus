@@ -52,7 +52,7 @@ class AssistantVC: JSQMessagesViewController {
         setupSender()
         setupWatsonServices()
         startAssistant()
-        info.getDefault()
+        //info.getDefault()
     }
 }
 
@@ -120,6 +120,7 @@ extension AssistantVC {
     }
     
     func showResults(results: [QueryPassages]) {
+        self.passages.removeAll()
         print("This is the showResults function with \(passages)")
         self.passages = results
         band = 1
@@ -132,7 +133,7 @@ extension AssistantVC {
             for preference in category.consumptionPreferences {
                 print("\(preference.consumptionPreferenceID):\(preference.score)")
                 
-                if(preference.consumptionPreferenceID == "consumption_preferences_movie_historical" && preference.score == 1.0) {
+                if(preference.consumptionPreferenceID == "consumption_preferences_movie_historical" && preference.score == 1.0 && materia == "Historia") {
                     queryList.append("text:\"\(materia)\",text:\"video\",text:\"historia\"")
                 }
                 
@@ -149,7 +150,7 @@ extension AssistantVC {
                 }
                 
                 if(preference.consumptionPreferenceID == "consumption_preferences_financial_investing" && preference.score == 1.0) {
-                    queryList.append("text:\"\(materia)\",text:\"inversiones\",text:\"articulo\"")
+                    queryList.append("text:\"\(materia)\",text:\"finanzas\",text:\"curso\"")
                 }
                 
                 if(preference.consumptionPreferenceID == "consumption_preferences_books_autobiographies" && preference.score == 1.0) {
@@ -190,7 +191,7 @@ extension AssistantVC {
             for intent in response.intents {
                 if(intent.intent == "examen" || intent.intent == "Aprender") {
                     print("\nEl usuario tiene intención de aprender\n")
-                    print("\nPersonalidad: \(info.getPersonality())")
+                    //print("\nPersonalidad: \(info.getPersonality())")
 
                     for entity in response.entities {
                         if(entity.entity == "materia") {
@@ -201,7 +202,7 @@ extension AssistantVC {
                 }
                 else if(intent.intent == "aprender" || intent.intent == "Recomendacion") {
                     print("\nEl usuario quiere una recomendación\n")
-                    print("\nPersonalidad: \(info.getPersonality())")
+                    //print("\nPersonalidad: \(info.getPersonality())")
                     
                     for entity in response.entities {
                         if(entity.entity == "materia") {
@@ -225,9 +226,10 @@ extension AssistantVC {
         }
         
         // create message
-        if(self.passages != nil) {
+        if(self.passages != nil && band == 1) {
             print("\n In message with \(self.passages)\n")
             let Qresult = passages[Int(arc4random_uniform(UInt32(passages.count)))]
+            print("\n\n Array of responses \(response.output.text)\n\n")
             let message = JSQMessage(
                 senderId: WatsonUser.watson.rawValue,
                 displayName: WatsonUser.getName(WatsonUser.watson),
@@ -239,6 +241,7 @@ extension AssistantVC {
                 self.messages.append(message)
                 DispatchQueue.main.async { self.finishSendingMessage() }
             }
+            band = 0
         }
         
         let message = JSQMessage(
